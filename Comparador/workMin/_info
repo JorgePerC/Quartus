@@ -1,0 +1,98 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Tarea2.1
+vComparador
+Z0 !s110 1613515083
+!i10b 1
+!s100 NT8hjFS>GOhd9:3E`ZeBA3
+I5][2MG?o^SXFXfCKc91aX0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador
+w1613498785
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Comparador.v
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Comparador.v
+L0 2
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1613515083.000000
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Comparador.v|
+!s90 -reportprogress|300|-work|workMin|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Comparador.v|
+!i113 1
+Z5 o-work workMin
+Z6 tCvgOpt 0
+n@comparador
+vMin
+R0
+!i10b 1
+!s100 XzUFhbFAjGPh_U9PA22n:2
+IYhH;FG9LQBaS^lGQdiGHf3
+R1
+R2
+w1613515066
+8C:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\Comparador\Min.v
+FC:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\Comparador\Min.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\Comparador\Min.v|
+!s90 -reportprogress|300|-work|workMin|-stats=none|C:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\Comparador\Min.v|
+!i113 1
+R5
+R6
+n@min
+vMin_testb
+R0
+!i10b 1
+!s100 aHH00XWNMZ2EIn]5YPSbd2
+I_30Xf5hHC2a7UVb_]Wl7A1
+R1
+R2
+w1613514705
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Min_testb.v
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Min_testb.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Min_testb.v|
+!s90 -reportprogress|300|-work|workMin|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Min_testb.v|
+!i113 1
+R5
+R6
+n@min_testb
+vMux2
+R0
+!i10b 1
+!s100 a0DQbCWF5O3T^jefTD4[82
+IJQ1>`jKn=4hMfjoXfeVYR0
+R1
+R2
+w1613513873
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Mux2.v
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Mux2.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Mux2.v|
+!s90 -reportprogress|300|-work|workMin|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Mux2.v|
+!i113 1
+R5
+R6
+n@mux2

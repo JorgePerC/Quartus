@@ -1,0 +1,16 @@
+
+module Comparator (
+	input [7:0] A,
+	input [7:0] A,
+	
+	output AgtB,
+	output AeqB,
+	output AltB
+
+);
+
+
+assign AeqB = A==B;
+assign AgtB = A>B;
+assign AltB = A<B;
+

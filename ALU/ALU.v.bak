@@ -1,0 +1,33 @@
+module ALU (
+	input [7:0] A,
+	input [7:0] B,
+	input [1:0] S,
+
+	output [7:0] Out,
+	output [7:0] C_Out,
+	output [7:0] Zero,
+	output Overflow,
+	output Negative,
+);
+
+wire ALUL_out;
+wire ALUA_out; 
+
+ALU_Logic ALUL (
+	.A(A),
+	.B(B),
+	.S(S),
+	.OUT(ALUL_out)
+);
+
+ALU_Arithmetic ALUA (
+	.A(A),
+	.B(B),
+	.S(S),
+	.OVERFLOW(Overflow),
+	.OUT(ALUA_out)
+);
+
+
+
+endmodule

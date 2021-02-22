@@ -1,0 +1,15 @@
+C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea/Mux8_test.v {1 {vlog -work workMuxes8 -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea/Mux8_test.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Mux8_test
+
+Top level modules:
+	Mux8_test
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea/Mux8.v {1 {vlog -work workMuxes8 -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea/Mux8.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Mux8
+
+Top level modules:
+	Mux8
+
+} {} {}}

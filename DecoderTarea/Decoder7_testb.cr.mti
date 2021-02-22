@@ -1,0 +1,15 @@
+C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/DecoderTarea/Decoder7.v {1 {vlog -work workDecoder -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/DecoderTarea/Decoder7.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Decoder7
+
+Top level modules:
+	Decoder7
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea/Decoder7_testb.v {1 {vlog -work workDecoder -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea/Decoder7_testb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Decoder7_test
+
+Top level modules:
+	Decoder7_test
+
+} {} {}}

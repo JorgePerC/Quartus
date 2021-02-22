@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/18.1
+vMuxes4to1
+Z0 !s110 1613334568
+!i10b 1
+!s100 z5fWfiQbMjeSNi;jf;TMP1
+INb>YUm[Z?FA=kgPi`]la90
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes4
+w1613334202
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes4/Muxes4to1.v
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes4/Muxes4to1.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1613334568.000000
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes4/Muxes4to1.v|
+!s90 -reportprogress|300|-work|workMux4to1|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes4/Muxes4to1.v|
+!i113 1
+Z5 o-work workMux4to1
+Z6 tCvgOpt 0
+n@muxes4to1
+vMuxes4to1_testb
+R0
+!i10b 1
+!s100 kmaL5S>jO@m]<566WZKHi3
+I4Nk]?eP_TX0@NHM6TGFaL1
+R1
+R2
+w1613334563
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes4/Muxes4to1_testb.v
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes4/Muxes4to1_testb.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes4/Muxes4to1_testb.v|
+!s90 -reportprogress|300|-work|workMux4to1|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes4/Muxes4to1_testb.v|
+!i113 1
+R5
+R6
+n@muxes4to1_testb

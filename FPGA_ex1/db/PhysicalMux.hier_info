@@ -1,0 +1,7 @@
+|PhysicalMux
+A => m_out.DATAB
+B => m_out.DATAA
+select => m_out.OUTPUTSELECT
+m_out << m_out.DB_MAX_OUTPUT_PORT_TYPE
+
+

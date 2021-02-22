@@ -1,0 +1,120 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador
+vALU_Arithmetic
+Z0 !s110 1613711967
+!i10b 1
+!s100 kdZa2JZF2o2M30LmHa4Nm2
+IoKLkS0]8[JNzafSkaGS@J3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU
+w1613710583
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Arithmetic.v
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Arithmetic.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1613711967.000000
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Arithmetic.v|
+!s90 -reportprogress|300|-work|workAlu|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Arithmetic.v|
+!i113 1
+Z5 o-work workAlu
+Z6 tCvgOpt 0
+n@a@l@u_@arithmetic
+vALU_Arithmetic_testb
+R0
+!i10b 1
+!s100 @KTd70djZfVcP<IRzc6Xh0
+IA][`SL=Q5e>Ad`oB[;[T`3
+R1
+R2
+w1613711014
+8C:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\ALU\ALU_Arithmetic_testb.v
+FC:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\ALU\ALU_Arithmetic_testb.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\ALU\ALU_Arithmetic_testb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\ALU\ALU_Arithmetic_testb.v|
+!i113 1
+Z7 o-work work
+R6
+n@a@l@u_@arithmetic_testb
+vALU_Logic
+R0
+!i10b 1
+!s100 @6[HD?=0Se:gQ[FoTRahm2
+I[JcfX>V8KjMoZHM;JD85>3
+R1
+R2
+w1613584719
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Logic.v
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Logic.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Logic.v|
+!s90 -reportprogress|300|-work|workAlu|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Logic.v|
+!i113 1
+R5
+R6
+n@a@l@u_@logic
+vALU_LOGIC_testb
+R0
+!i10b 1
+!s100 gD_8ci3D[R`_OzedmWcXb0
+IgiGZjLPz9fi4c`aU5P;3n0
+R1
+R2
+w1613711199
+8C:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\ALU\ALU_Logic_testb.v
+FC:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\ALU\ALU_Logic_testb.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\ALU\ALU_Logic_testb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\ALU\ALU_Logic_testb.v|
+!i113 1
+R7
+R6
+n@a@l@u_@l@o@g@i@c_testb
+vMux4
+!s110 1613711968
+!i10b 1
+!s100 0]ALV5fVgk9TaSzKmGdO?2
+IBiWa[`FW75gJAk`=FP@@23
+R1
+R2
+w1613703470
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/Mux4.v
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/Mux4.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1613711968.000000
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/Mux4.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/Mux4.v|
+!i113 1
+R7
+R6
+n@mux4

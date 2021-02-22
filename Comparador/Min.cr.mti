@@ -1,0 +1,15 @@
+C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Comparador.v {1 {vlog -work workMin -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Comparador.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Comparador
+
+Top level modules:
+	Comparador
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Min_testb.v {1 {vlog -work workMin -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Comparador/Min_testb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Min_testb
+
+Top level modules:
+	Min_testb
+
+} {} {}}

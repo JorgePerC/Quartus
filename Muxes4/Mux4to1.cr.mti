@@ -1,0 +1,15 @@
+C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes4/Muxes4to1.v {1 {vlog -work workMux4to1 -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes4/Muxes4to1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Muxes4to1
+
+Top level modules:
+	Muxes4to1
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes4/Muxes4to1_testb.v {1 {vlog -work workMux4to1 -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes4/Muxes4to1_testb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Muxes4to1_testb
+
+Top level modules:
+	Muxes4to1_testb
+
+} {} {}}

@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/DecoderTarea
+vMux8
+Z0 !s110 1613450070
+!i10b 1
+!s100 nV]QbVL17j3c0i;o[HH;O3
+I8gPkH86AZiiHN;GBPkdaG2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea
+w1613352032
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea/Mux8.v
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea/Mux8.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1613450070.000000
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea/Mux8.v|
+!s90 -reportprogress|300|-work|workMux8|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea/Mux8.v|
+!i113 1
+Z5 o-work workMux8
+Z6 tCvgOpt 0
+n@mux8
+vMux8_test
+R0
+!i10b 1
+!s100 ?>C8>of2`DkNS9zcgCRe^0
+Ia:N9eTig87z<<l0eJgo=^1
+R1
+R2
+w1613450066
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea/Mux8_test.v
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea/Mux8_test.v
+L0 5
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea/Mux8_test.v|
+!s90 -reportprogress|300|-work|workMux8|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/Muxes8Tarea/Mux8_test.v|
+!i113 1
+R5
+R6
+n@mux8_test

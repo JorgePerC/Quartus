@@ -1,0 +1,19 @@
+|FPGA_Decoder
+Out[3] << Out.DB_MAX_OUTPUT_PORT_TYPE
+Out[2] << Out.DB_MAX_OUTPUT_PORT_TYPE
+Out[1] << Out.DB_MAX_OUTPUT_PORT_TYPE
+Out[0] << Out.DB_MAX_OUTPUT_PORT_TYPE
+A => Out.IN0
+A => Out.IN0
+A => Out.IN0
+A => Out.IN0
+B => Out.IN1
+B => Out.IN1
+B => Out.IN1
+B => Out.IN1
+enable => Out.IN1
+enable => Out.IN1
+enable => Out.IN1
+enable => Out.IN1
+
+

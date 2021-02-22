@@ -1,0 +1,25 @@
+module Mux2(
+	input [7:0] A,
+	input [7:0] B, 
+	input [7:0] S,
+	
+	output [7:0] OUT
+);
+
+always @(*)
+	begin 
+		case (S)
+		
+		1'b0: 
+		OUT = A;
+		
+		1'b1: 
+		OUT = b;
+		
+		default:
+			OUT = 8'Bxxxxxxxx;
+		endcase
+		
+	end
+
+endmodule
