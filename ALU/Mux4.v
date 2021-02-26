@@ -6,23 +6,23 @@ module Mux4(
 	input [7:0] D,
 	input [1:0] S,
 	
-	output reg [7:0] OUT
+	output reg [7:0] Out
 );
 
 	
 	always @(*) begin
 		case (S)
 		2'h0 : 
-			OUT = A;
+			Out = A;
 		2'h1 : 
-			OUT = B;
+			Out = B;
 		2'h2 : 
-			OUT = C;
+			Out = C;
 		2'h3 : 
-			OUT = D;
+			Out = D;
 		
 		default:
-			OUT = 8'hxx;
+			Out = 8'hxx;
 		endcase
 	end
 	

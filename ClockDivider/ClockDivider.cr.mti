@@ -1,0 +1,15 @@
+C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/ClockDivider/ClockDivider.v {1 {vlog -work workClock -stats=none {C:\Users\jorge\OneDrive\Documentos\MyCode2.0\ClassRepos\Quartus\ClockDivider\ClockDivider.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ClockDivider
+
+Top level modules:
+	ClockDivider
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/ClockDivider/ClockDivider_tb.v {1 {vlog -work workClock -stats=none {C:\Users\jorge\OneDrive\Documentos\MyCode2.0\ClassRepos\Quartus\ClockDivider\ClockDivider_tb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ClockDivider_tb
+
+Top level modules:
+	ClockDivider_tb
+
+} {} {}}

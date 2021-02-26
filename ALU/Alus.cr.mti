@@ -5,13 +5,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Mux4
 
-} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Arithmetic.v {1 {vlog -work workAlu -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Arithmetic.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ALU_Arithmetic
-
-Top level modules:
-	ALU_Arithmetic
-
 } {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Logic.v {1 {vlog -work workAlu -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Logic.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module ALU_Logic
@@ -19,18 +12,18 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	ALU_Logic
 
-} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Arithmetic_testb.v {1 {vlog -work work -stats=none {C:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\ALU\ALU_Arithmetic_testb.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ALU_Arithmetic_testb
-
-Top level modules:
-	ALU_Arithmetic_testb
-
 } {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Logic_testb.v {1 {vlog -work work -stats=none {C:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\ALU\ALU_Logic_testb.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module ALU_LOGIC_testb
 
 Top level modules:
 	ALU_LOGIC_testb
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU/ALU_Arithmetic_testb.v {1 {vlog -work work -stats=none {C:\Users\jorge\OneDrive\Documentos\MyCode2.0\Quartus\ALU\ALU_Arithmetic_testb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU_Arithmetic_testb
+
+Top level modules:
+	ALU_Arithmetic_testb
 
 } {} {}}

@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/jorge/OneDrive/Documentos/MyCode2.0/Quartus/ALU
+vClockDivider
+Z0 !s110 1614099159
+!i10b 1
+!s100 JWIP2j1BQg1k>45^0AjRE2
+IR4_8^zX239Qdl;INSTScn3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/ClockDivider
+w1614099093
+8C:\Users\jorge\OneDrive\Documentos\MyCode2.0\ClassRepos\Quartus\ClockDivider\ClockDivider.v
+FC:\Users\jorge\OneDrive\Documentos\MyCode2.0\ClassRepos\Quartus\ClockDivider\ClockDivider.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1614099159.000000
+!s107 C:\Users\jorge\OneDrive\Documentos\MyCode2.0\ClassRepos\Quartus\ClockDivider\ClockDivider.v|
+!s90 -reportprogress|300|-work|workClock|-stats=none|C:\Users\jorge\OneDrive\Documentos\MyCode2.0\ClassRepos\Quartus\ClockDivider\ClockDivider.v|
+!i113 1
+Z5 o-work workClock
+Z6 tCvgOpt 0
+n@clock@divider
+vClockDivider_tb
+R0
+!i10b 1
+!s100 XB8SZd74aLRG1g=c]N0jR0
+InM^k2]5K<aiC1=GG]<N^O3
+R1
+R2
+w1614099152
+8C:\Users\jorge\OneDrive\Documentos\MyCode2.0\ClassRepos\Quartus\ClockDivider\ClockDivider_tb.v
+FC:\Users\jorge\OneDrive\Documentos\MyCode2.0\ClassRepos\Quartus\ClockDivider\ClockDivider_tb.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:\Users\jorge\OneDrive\Documentos\MyCode2.0\ClassRepos\Quartus\ClockDivider\ClockDivider_tb.v|
+!s90 -reportprogress|300|-work|workClock|-stats=none|C:\Users\jorge\OneDrive\Documentos\MyCode2.0\ClassRepos\Quartus\ClockDivider\ClockDivider_tb.v|
+!i113 1
+R5
+R6
+n@clock@divider_tb

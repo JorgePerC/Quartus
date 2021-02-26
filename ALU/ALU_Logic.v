@@ -3,7 +3,7 @@ module ALU_Logic(
 	input [7:0] B,
 	input [1:0] S,
 	
-	output reg [7:0] OUT
+	output reg [7:0] Out
 
 );
 
@@ -20,15 +20,15 @@ assign NOT = ~A;
 always @(*) begin
 	case (S)
 		2'b00:
-			OUT = AND;
+			Out = AND;
 		2'b01:
-			OUT = OR;
+			Out = OR;
 		2'b10:
-			OUT = XOR;
+			Out = XOR;
 		2'b11:
-			OUT = NOT;
+			Out = NOT;
 		default:
-			OUT = 8'hx;
+			Out = 8'hx;
 	endcase
 end 
 
