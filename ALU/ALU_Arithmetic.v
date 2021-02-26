@@ -11,8 +11,6 @@ module ALU_Arithmetic (
 reg C_In;
 wire [7:0] SUMMAND;
 
-assign complement_B = ~B; // No va +1 aquí, abajo 
-
 // 00 -> Suma
 // 01 -> Resta
 // 00 -> +0 (+1)
@@ -20,7 +18,7 @@ assign complement_B = ~B; // No va +1 aquí, abajo
 
 Mux4 mux (
 	.A(B),
-	.B(complement_B),
+	.B(~B),
 	.C({8{1'b0}}), // Repeat 0 8 times. 
 	.D({8{1'b0}}), // Can we leave blank?
 	.S(S),
@@ -47,9 +45,9 @@ Adder suma (
 always @(*)
 	
 	begin
-			
-		Overflow = (A[7]^B[7]) ? 0: (Out[7]^A[7]); //Only if both are same will be overflow
-		Negative = Out[7]; //También hay que saber si hubo resta o no :)
+		Negative = Out[7]; //También hay que saber si hubo resta o no :)	
+		Overflow = ( {C_Out, Out[7]} == 2'b01); //Only if both are same will be overflow
+		
 	end
 
 

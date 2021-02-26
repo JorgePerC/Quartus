@@ -1,0 +1,36 @@
+C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/ALU/ALU_TB.v {1 {vlog -work workAlu -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/ALU/ALU_TB.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU_TB
+
+Top level modules:
+	ALU_TB
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/ALU/ALU_Logic.v {1 {vlog -work workAlu -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/ALU/ALU_Logic.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU_Logic
+
+Top level modules:
+	ALU_Logic
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/ALU/ALU_Arithmetic.v {1 {vlog -work workAlu -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/ALU/ALU_Arithmetic.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU_Arithmetic
+
+Top level modules:
+	ALU_Arithmetic
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/ALU/Mux4.v {1 {vlog -work workAlu -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/ALU/Mux4.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Mux4
+
+Top level modules:
+	Mux4
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/ALU/ALU.v {1 {vlog -work workAlu -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/ALU/ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}}

@@ -1,6 +1,7 @@
-module Timer 
+module Counter
 # (parameter ticks = 30)
-(input clk,
+(
+    input clk,
     input rst,  // reset
     input en,   // enable
     output reg [7:0] count
@@ -11,7 +12,7 @@ module Timer
 
         always @ (posedge clk) begin
             if(rst)
-                count <= ticks -1 ; //Pq también cuenta 0
+                count <= ticks -1;
             else if(en)
                 count <= nxt_count;
         end

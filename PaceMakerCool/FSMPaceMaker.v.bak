@@ -3,9 +3,9 @@ module FSMPaceMaker (
     input rst,
     
     input SA,
-    input ZA,
-    input SB,
-    input ZB,
+    input TA,
+    input SV,
+    input TV,
 
     output PA,
     output TA_ld,
@@ -25,7 +25,7 @@ parameter PaceB = 3'b111;
 
 // Variables para el FF, (guardar cosas)
 reg [7:0] actState;
-reg [7:0] nxtState;
+wire [7:0] nxtState;
 
 // Logic Gates:
 always @(*) begin
