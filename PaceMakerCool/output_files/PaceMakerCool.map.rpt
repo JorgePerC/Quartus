@@ -1,5 +1,5 @@
 Analysis & Elaboration report for PaceMakerCool
-Fri Feb 26 10:42:27 2021
+Sun Feb 28 22:26:28 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Failed - Fri Feb 26 10:42:27 2021           ;
+; Analysis & Elaboration Status      ; Failed - Sun Feb 28 22:26:28 2021           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; PaceMakerCool                               ;
 ; Top-level Entity Name              ; PaceMakerCool                               ;
@@ -165,7 +165,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Feb 26 10:42:07 2021
+    Info: Processing started: Sun Feb 28 22:25:57 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PaceMakerCool -c PaceMakerCool --analysis_and_elaboration
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file timer.v
@@ -178,10 +178,10 @@ Error (10228): Verilog HDL error at pacemakercool.v(1): module "FSMPaceMaker" ca
 Info (10499): HDL info at FSMPaceMaker.v(1): see declaration for object "FSMPaceMaker" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/PaceMakerCool/FSMPaceMaker.v Line: 1
 Info (144001): Generated suppressed messages file C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/PaceMakerCool/output_files/PaceMakerCool.map.smsg
 Error: Quartus Prime Analysis & Elaboration was unsuccessful. 1 error, 0 warnings
-    Error: Peak virtual memory: 4697 megabytes
-    Error: Processing ended: Fri Feb 26 10:42:27 2021
-    Error: Elapsed time: 00:00:20
-    Error: Total CPU time (on all processors): 00:00:46
+    Error: Peak virtual memory: 4709 megabytes
+    Error: Processing ended: Sun Feb 28 22:26:28 2021
+    Error: Elapsed time: 00:00:31
+    Error: Total CPU time (on all processors): 00:01:11
 
 
 +--------------------------------------------+

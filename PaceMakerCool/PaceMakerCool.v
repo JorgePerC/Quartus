@@ -1,3 +1,8 @@
-module FSMPaceMaker ();
+module PaceMakerCool (
+
+);
+// Timer (contador) 
+// FSM
+
 
 endmodule
