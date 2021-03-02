@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Failed - Sun Feb 28 22:31:07 2021
+Analysis & Elaboration Status : Successful - Mon Mar 01 19:20:04 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-Revision Name : PaceMakerCool
-Top-level Entity Name : PaceMakerCool
+Revision Name : FSM_Secuencia
+Top-level Entity Name : FSM_Secuencia
 Family : MAX 10
 Total logic elements : N/A until Partition Merge
     Total combinational functions : N/A until Partition Merge
