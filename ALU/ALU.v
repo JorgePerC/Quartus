@@ -5,13 +5,16 @@ module ALU (
 
 	output reg [7:0] Out,// ALUA/ALUL 
 	output Zero, 		// ALUA/ALUL
-	output C_Out,		// ALUA
-	output Overflow,	// ALUA
-	output Negative		// ALUA 
+	output reg C_Out,		// ALUA
+	output reg Overflow,	// ALUA
+	output reg Negative		// ALUA / ALUL 
 );
 
 wire [7:0] ALUL_out;
 wire [7:0] ALUA_out; 
+wire temp_Overflow;
+wire temp_Negative;
+wire temp_C_Out;
 
 ALU_Logic ALUL (
 	.A(A),
@@ -26,9 +29,9 @@ ALU_Arithmetic ALUA (
 	.B(B),
 	.S(S[1:0]),
 	
-	.Overflow(Overflow),
-	.C_Out(C_Out),
-	.Negative(Negative),
+	.Overflow(temp_Overflow),
+	.C_Out(temp_C_Out),
+	.Negative(temp_Negative),
 	.Out(ALUA_out)
 	
 );
@@ -39,10 +42,11 @@ always @(*)
 	begin
 		//El out depende del primer bit del S
 		Out = (S[2] == 1'b0) ? ALUA_out :  ALUL_out;
+		// Sólo aplica con las ariméticas
+		Overflow = (S[2] == 1'b0) ? temp_Overflow : 0;
+		C_Out = (S[2] == 1'b0) ? temp_C_Out : 0;
+		Negative =  Out [7] == 1;//(S[2] == 1'b0) ? temp_Negative : 0;
 	end	
-
 assign Zero = ~(|Out); //Ecuación para saber si es cero 		
-	
-	
 
 endmodule

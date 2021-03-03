@@ -46,7 +46,7 @@ always @(*)
 	
 	begin
 		Negative = Out[7]; //También hay que saber si hubo resta o no :)	
-		Overflow = ( {C_Out, Out[7]} == 2'b01); //Only if both are same will be overflow
+		Overflow = (SUMMAND[7]^A[7]) ? 0 : (Out[7]^A[7]) ;//( {C_Out, Out[7]} == 2'b01); //Only if both are same will be overflow
 		
 	end
 

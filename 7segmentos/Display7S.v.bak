@@ -1,0 +1,30 @@
+module Display7S (
+
+input [2:0] bi_Num,
+output reg [7:0] segments
+
+);
+
+always @(*) begin
+    case (bi_Num)
+        3'b000:
+            segments = ~8'b1111_1101; // 0 
+        3'b001:
+            segments = ~8'b0110_0000; // 1
+        3'b010:
+            segments = ~8'b1101_0010; // 2
+        3'b011:
+            segments = ~8'b0000_0000; // 3
+        3'b100:
+            segments = ~8'b0000_0000; // 4
+        3'b101:
+            segments = ~8'b0000_0000; // 5
+        3'b110:
+            segments = ~8'b0000_0000; // 6
+        3'b111:
+            segments = ~8'b0000_0000; // 7  
+
+    endcase
+end
+
+endmodule
