@@ -1,0 +1,16 @@
+module ALU_Imp (
+    input A,
+    input B,
+    input S,
+
+    output Out,
+    output Zero, 		    // ALUA/ALUL
+	output reg C_Out,		// ALUA
+	output reg Overflow,	// ALUA
+	output reg Negative		// ALUA / ALUL 
+);
+
+Dis1 
+
+
+endmodule

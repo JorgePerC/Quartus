@@ -32,7 +32,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "segments[7]",
+					"strict" : false
+				},
+				{
 					"name" : "bi_Num[0]",
+					"strict" : false
+				},
+				{
+					"name" : "bi_Num[1]",
 					"strict" : false
 				},
 				{
@@ -40,7 +48,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "bi_Num[1]",
+					"name" : "bi_Num[3]",
 					"strict" : false
 				}
 			]

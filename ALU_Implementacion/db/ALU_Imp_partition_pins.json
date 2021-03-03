@@ -1,0 +1,89 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Zero",
+					"strict" : false
+				},
+				{
+					"name" : "C_Out",
+					"strict" : false
+				},
+				{
+					"name" : "Overflow",
+					"strict" : false
+				},
+				{
+					"name" : "Negative",
+					"strict" : false
+				},
+				{
+					"name" : "outSalidas[0]",
+					"strict" : false
+				},
+				{
+					"name" : "outSalidas[1]",
+					"strict" : false
+				},
+				{
+					"name" : "outSalidas[2]",
+					"strict" : false
+				},
+				{
+					"name" : "outSalidas[3]",
+					"strict" : false
+				},
+				{
+					"name" : "outSalidas[4]",
+					"strict" : false
+				},
+				{
+					"name" : "outSalidas[5]",
+					"strict" : false
+				},
+				{
+					"name" : "outSalidas[6]",
+					"strict" : false
+				},
+				{
+					"name" : "S[0]",
+					"strict" : false
+				},
+				{
+					"name" : "B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "S[1]",
+					"strict" : false
+				},
+				{
+					"name" : "S[2]",
+					"strict" : false
+				},
+				{
+					"name" : "B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "A[1]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

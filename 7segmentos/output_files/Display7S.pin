@@ -168,7 +168,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : C8        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : C9        :        :                   :         : 7         :                
 bi_Num[0]                    : C10       : input  : 2.5 V             :         : 7         : Y              
 bi_Num[1]                    : C11       : input  : 2.5 V             :         : 7         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C12       :        :                   :         : 7         :                
+bi_Num[3]                    : C12       : input  : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C13       :        :                   :         : 7         :                
 segments[0]                  : C14       : output : 2.5 V             :         : 7         : Y              
 segments[2]                  : C15       : output : 2.5 V             :         : 7         : Y              

@@ -1,0 +1,29 @@
+module Mux4(
+
+	input [2:0] A,
+	input [2:0] B,
+	input [2:0] C,
+	input [2:0] D,
+	input [1:0] S,
+	
+	output reg [2:0] Out
+);
+
+	
+	always @(*) begin
+		case (S)
+		2'h0 : 
+			Out = A;
+		2'h1 : 
+			Out = B;
+		2'h2 : 
+			Out = C;
+		2'h3 : 
+			Out = D;
+		
+		default:
+			Out = 3'hxx;
+		endcase
+	end
+	
+	endmodule
