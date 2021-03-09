@@ -1,17 +1,16 @@
 module ALU_Shift 
-# (parameter width = 8, parameter cnt_width = 3;)
+# (parameter width = 8, parameter cnt_width = 3)
 (
 input logic [width-1 : 0] a,        // Number to shift
 input logic [cnt_width-1 : 0] cnt,  // Bits to shift
-input logic y,                      // ??
-input logic z,                      // ??
+input logic [1 : 0] s,                      // Selector
 
 output logic [width-1 : 0] out,     // res
 output logic co                     // ??
 );
 
 always_comb begin 		
-    case ({y,z})		// This implements a 4 to 1 Mux 
+    case (s)		// This implements a 4 to 1 Mux 
         2'b00: 
             {co,s} =  {1'b0, a} << cnt;  // Shiftleft by Cnt times; last bit shifted past 8 bit boundary captured as Carry
         2'b01: 

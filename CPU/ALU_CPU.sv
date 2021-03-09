@@ -24,9 +24,9 @@ ALU_Arithmetic ALUA (
 	.b(op2_i),
 	.s(ALU_op_i[1:0]),
 	
-	.Overflow(),
+	.Overflow(), // ?
 	.c_out(carry_o),
-	.Negative(temp_Negative),
+	.Negative(temp_Negative), //?
 	.Out(ALUA_out)
 	
 );
@@ -38,10 +38,18 @@ ALU_Logic ALUL (
 	
 	.out(ALUL_out)
 );
+ALU_Shift  ALUS (
+ .a(rs_i),          // Number to shift
+ .cnt(count_i),     // Bits to shift
+ .s(ALU_op_i[1:0]), // Selector
 
+ .out(ALUS_out),    // res
+ .co()              // ??
+);
 // ALU_Shift instantiation
 
 always_comb begin
+
     case (ALU_op_i)
         4'b00_00: // SUMA a+b 
         4'b00_01: // SUMA a+b+c
@@ -56,9 +64,9 @@ always_comb begin
         4'b10_00: // SHIFT A COUNT places "rd=rs << count | if count > 0 then: C = rs(8-count)"
         4'b10_01: // SHIFT A COUNT places "rd=rs >> count | if count > 0 then: C = rs(count-1)"
         4'b10_11: // SHIFT A COUNT places "rd=rs <<< count| if count> 0 then: C = rs(8-count)"
-        4'b00_00: // SHIFT A COUNT places "rd=rs >>> count if count> 0 then: C = rs(count-1)"
 
-        // Remaining 4 possible combinations don't matter. 
+        // Remaining 5 possible combinations don't matter. 
+        4'bxx_xx
         default: 
             res_o = 8'bX
     endcase    

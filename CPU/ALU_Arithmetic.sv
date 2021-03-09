@@ -4,6 +4,8 @@ module ALU_Arithmetic
 	input logic [width-1 : 0] a,
 	input logic [width-1 : 0] b,
 	input logic [1:0] s,
+	input logic c_in,
+
 	output logic [width-1 : 0] out,
 	output logic c_out,
 	output logic negative,
@@ -24,7 +26,7 @@ Mux4 mux (
 	.b(~b),
 	.c({width{1'b0}}), // Repeat 0 8 times. 
 	.d({width{1'b0}}), // Can we leave blank?
-	.d(s),
+	.s(s),
 	
 	.out(summand)
 );

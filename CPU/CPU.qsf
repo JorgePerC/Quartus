@@ -56,3 +56,4 @@ set_global_assignment -name SYSTEMVERILOG_FILE ALU_Arithmetic.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ALU_Logic.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Mux4.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Adder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE BitRegister.sv

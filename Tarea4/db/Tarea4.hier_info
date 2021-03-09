@@ -1,0 +1,14 @@
+|Tarea4
+i_Binary_Num[0] => Decoder0.IN3
+i_Binary_Num[1] => Decoder0.IN2
+i_Binary_Num[2] => Decoder0.IN1
+i_Binary_Num[3] => Decoder0.IN0
+Segment_A <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+Segment_B <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+Segment_C <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+Segment_D <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+Segment_E <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+Segment_F <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+Segment_G <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+
+
