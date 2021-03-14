@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CtrlUnitFSM
-Sat Mar 13 17:54:45 2021
+Sat Mar 13 23:47:18 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,14 +15,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |CtrlUnitFSM|act_state
   9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: Top-level Entity: |CtrlUnitFSM
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
- 17. Analysis & Synthesis Suppressed Messages
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |CtrlUnitFSM
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -48,16 +47,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Mar 13 17:54:45 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sat Mar 13 23:47:18 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; CtrlUnitFSM                                 ;
 ; Top-level Entity Name              ; CtrlUnitFSM                                 ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 58                                          ;
+; Total logic elements               ; 38                                          ;
+;     Total combinational functions  ; 38                                          ;
+;     Dedicated logic registers      ; 6                                           ;
+; Total registers                    ; 6                                           ;
+; Total pins                         ; 43                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -162,10 +161,11 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -178,35 +178,36 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                 ;
-+---------------------------------------------+---------------+
-; Resource                                    ; Usage         ;
-+---------------------------------------------+---------------+
-;                                             ;               ;
-; Total combinational functions               ; 0             ;
-; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 0             ;
-;     -- 3 input functions                    ; 0             ;
-;     -- <=2 input functions                  ; 0             ;
-;                                             ;               ;
-; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 0             ;
-;     -- arithmetic mode                      ; 0             ;
-;                                             ;               ;
-; Total registers                             ; 0             ;
-;     -- Dedicated logic registers            ; 0             ;
-;     -- I/O registers                        ; 0             ;
-;                                             ;               ;
-; I/O pins                                    ; 58            ;
-;                                             ;               ;
-; Embedded Multiplier 9-bit elements          ; 0             ;
-;                                             ;               ;
-; Maximum fan-out node                        ; inst_dat_i[0] ;
-; Maximum fan-out                             ; 1             ;
-; Total fan-out                               ; 58            ;
-; Average fan-out                             ; 0.50          ;
-+---------------------------------------------+---------------+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 38              ;
+;                                             ;                 ;
+; Total combinational functions               ; 38              ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 18              ;
+;     -- 3 input functions                    ; 15              ;
+;     -- <=2 input functions                  ; 5               ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 38              ;
+;     -- arithmetic mode                      ; 0               ;
+;                                             ;                 ;
+; Total registers                             ; 6               ;
+;     -- Dedicated logic registers            ; 6               ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 43              ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; func_i[1]~input ;
+; Maximum fan-out                             ; 10              ;
+; Total fan-out                               ; 201             ;
+; Average fan-out                             ; 1.55            ;
++---------------------------------------------+-----------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -214,7 +215,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |CtrlUnitFSM               ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 58   ; 0            ; 0          ; |CtrlUnitFSM        ; CtrlUnitFSM ; work         ;
+; |CtrlUnitFSM               ; 38 (38)             ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 43   ; 0            ; 0          ; |CtrlUnitFSM        ; CtrlUnitFSM ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -242,24 +243,8 @@ Encoding Type:  One-Hot
 ; act_state~2                           ; Lost fanout        ;
 ; act_state~3                           ; Lost fanout        ;
 ; act_state~4                           ; Lost fanout        ;
-; act_state.fetch_state                 ; Lost fanout        ;
-; act_state.decode_state                ; Lost fanout        ;
-; act_state.int_state                   ; Lost fanout        ;
-; act_state.execute_state               ; Lost fanout        ;
-; act_state.mem_state                   ; Lost fanout        ;
-; act_state.write_back_state            ; Lost fanout        ;
-; Total Number of Removed Registers = 9 ;                    ;
+; Total Number of Removed Registers = 3 ;                    ;
 +---------------------------------------+--------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                  ;
-+---------------+--------------------+-------------------------------------------------------------------------+
-; Register name ; Reason for Removal ; Registers Removed due to This Register                                  ;
-+---------------+--------------------+-------------------------------------------------------------------------+
-; act_state~2   ; Lost Fanouts       ; act_state.fetch_state, act_state.decode_state, act_state.execute_state, ;
-;               ;                    ; act_state.mem_state                                                     ;
-+---------------+--------------------+-------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -267,7 +252,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 6     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -306,13 +291,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 58                          ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
+; boundary_port         ; 43                          ;
+; cycloneiii_ff         ; 6                           ;
+;     plain             ; 6                           ;
+; cycloneiii_lcell_comb ; 41                          ;
+;     normal            ; 41                          ;
 ;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 18                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.94                        ;
 +-----------------------+-----------------------------+
 
 
@@ -321,7 +312,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -331,106 +322,41 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Mar 13 17:54:27 2021
+    Info: Processing started: Sat Mar 13 23:46:57 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CtrlUnitFSM -c CtrlUnitFSM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file ctrlunitfsm.sv
     Info (12023): Found entity 1: CtrlUnitFSM File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 1
 Info (12127): Elaborating entity "CtrlUnitFSM" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at CtrlUnitFSM.sv(89): object "logalu_immed" assigned a value but never read File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 89
-Warning (10036): Verilog HDL or VHDL warning at CtrlUnitFSM.sv(90): object "alu_reg" assigned a value but never read File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 90
-Warning (10036): Verilog HDL or VHDL warning at CtrlUnitFSM.sv(91): object "shift" assigned a value but never read File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 91
-Warning (10034): Output port "ALUOP_o" at CtrlUnitFSM.sv(19) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 19
-Warning (10034): Output port "RegMux_c_o" at CtrlUnitFSM.sv(24) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 24
-Warning (10034): Output port "PCoper_o" at CtrlUnitFSM.sv(26) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 26
-Warning (10034): Output port "port_ack_o" at CtrlUnitFSM.sv(15) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 15
-Warning (10034): Output port "inst_ack_o" at CtrlUnitFSM.sv(16) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 16
-Warning (10034): Output port "op2_c_o" at CtrlUnitFSM.sv(18) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 18
-Warning (10034): Output port "ALUFR_c" at CtrlUnitFSM.sv(20) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 20
-Warning (10034): Output port "ALU_en_o" at CtrlUnitFSM.sv(21) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 21
-Warning (10034): Output port "RegWrt_c_o" at CtrlUnitFSM.sv(23) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 23
-Warning (10034): Output port "PC_en_o" at CtrlUnitFSM.sv(27) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 27
-Warning (10034): Output port "pop_o" at CtrlUnitFSM.sv(29) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 29
-Warning (10034): Output port "jsb_o" at CtrlUnitFSM.sv(30) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 30
-Warning (10034): Output port "reti_o" at CtrlUnitFSM.sv(32) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 32
-Warning (10034): Output port "int_o" at CtrlUnitFSM.sv(33) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 33
-Warning (10034): Output port "stb_o" at CtrlUnitFSM.sv(35) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 35
-Warning (10034): Output port "cyc_o" at CtrlUnitFSM.sv(36) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 36
-Warning (10034): Output port "weport_o" at CtrlUnitFSM.sv(38) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 38
-Warning (10034): Output port "wedata_o" at CtrlUnitFSM.sv(40) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 40
+Warning (10230): Verilog HDL assignment warning at CtrlUnitFSM.sv(194): truncated value with size 32 to match size of target (1) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 194
+Warning (10230): Verilog HDL assignment warning at CtrlUnitFSM.sv(200): truncated value with size 32 to match size of target (4) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 200
+Warning (10034): Output port "RegMux_c_o" at CtrlUnitFSM.sv(30) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 30
+Warning (10034): Output port "PC_en_o" at CtrlUnitFSM.sv(36) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 36
+Warning (10034): Output port "DPMux_o" at CtrlUnitFSM.sv(44) has no driver File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 44
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "port_ack_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 15
-    Warning (13410): Pin "inst_ack_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 16
-    Warning (13410): Pin "op2_c_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 18
-    Warning (13410): Pin "ALUOP_o[0]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 19
-    Warning (13410): Pin "ALUOP_o[1]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 19
-    Warning (13410): Pin "ALUOP_o[2]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 19
-    Warning (13410): Pin "ALUOP_o[3]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 19
-    Warning (13410): Pin "ALUFR_c" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 20
-    Warning (13410): Pin "ALU_en_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 21
-    Warning (13410): Pin "RegWrt_c_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 23
-    Warning (13410): Pin "RegMux_c_o[0]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 24
-    Warning (13410): Pin "RegMux_c_o[1]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 24
-    Warning (13410): Pin "PCoper_o[0]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 26
-    Warning (13410): Pin "PCoper_o[1]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 26
-    Warning (13410): Pin "PCoper_o[2]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 26
-    Warning (13410): Pin "PCoper_o[3]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 26
-    Warning (13410): Pin "PC_en_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 27
-    Warning (13410): Pin "pop_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 29
-    Warning (13410): Pin "jsb_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 30
-    Warning (13410): Pin "reti_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 32
-    Warning (13410): Pin "int_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 33
-    Warning (13410): Pin "stb_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 35
-    Warning (13410): Pin "cyc_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 36
-    Warning (13410): Pin "weport_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 38
-    Warning (13410): Pin "wedata_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 40
-Info (17049): 9 registers lost all their fanouts during netlist optimizations.
+    Warning (13410): Pin "ALUOP_o[1]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 28
+    Warning (13410): Pin "ALUOP_o[2]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 28
+    Warning (13410): Pin "ALUOP_o[3]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 28
+    Warning (13410): Pin "RegMux_c_o[0]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 30
+    Warning (13410): Pin "RegMux_c_o[1]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 30
+    Warning (13410): Pin "PCoper_o[0]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 35
+    Warning (13410): Pin "PC_en_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 36
+    Warning (13410): Pin "DPMux_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 44
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/output_files/CtrlUnitFSM.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 33 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "inst_dat_i[0]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[1]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[2]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[3]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[4]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[5]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[6]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[7]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[8]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[9]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[10]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[11]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[12]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[13]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[14]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[15]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_dat_i[16]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 11
-    Warning (15610): No output dependent on input pin "inst_ack_i" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 10
-    Warning (15610): No output dependent on input pin "interruption" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 13
-    Warning (15610): No output dependent on input pin "func_i[1]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 4
-    Warning (15610): No output dependent on input pin "func_i[2]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 4
-    Warning (15610): No output dependent on input pin "func_i[3]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 4
-    Warning (15610): No output dependent on input pin "op_i[0]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 3
-    Warning (15610): No output dependent on input pin "op_i[1]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 3
-    Warning (15610): No output dependent on input pin "op_i[2]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 3
-    Warning (15610): No output dependent on input pin "op_i[3]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 3
-    Warning (15610): No output dependent on input pin "op_i[4]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 3
-    Warning (15610): No output dependent on input pin "op_i[5]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 3
-    Warning (15610): No output dependent on input pin "op_i[6]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 3
-    Warning (15610): No output dependent on input pin "func_i[0]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 4
-    Warning (15610): No output dependent on input pin "data_ack_i" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 7
-    Warning (15610): No output dependent on input pin "port_ack_i" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 9
-    Warning (15610): No output dependent on input pin "clk" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CtrlUnit/CtrlUnitFSM.sv Line: 6
-Info (21057): Implemented 58 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 33 input pins
-    Info (21059): Implemented 25 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 82 warnings
-    Info: Peak virtual memory: 4736 megabytes
-    Info: Processing ended: Sat Mar 13 17:54:45 2021
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:40
+Info (21057): Implemented 81 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 27 output pins
+    Info (21061): Implemented 38 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 4757 megabytes
+    Info: Processing ended: Sat Mar 13 23:47:18 2021
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:45
 
 
 +------------------------------------------+

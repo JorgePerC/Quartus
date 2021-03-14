@@ -49,11 +49,7 @@ module CtrlUnitFSM (
 
     // IR instrucitons
     output logic stb_o,  //  :)
-    output logic cyc_o,  //  :)
-
-    // I think we can delete these
-    // output logic weport_o, :|
-    // output logic wedata_o  :|
+    output logic cyc_o  //  :)
 );
 
 // Flip-flops
@@ -194,7 +190,7 @@ always_ff @( posedge clk ) begin
         act_state <=  nxt_state;
 end
 
-always_comb
+always_comb begin 
     inst_ack_o = (act_state == int_state) ? 1 : 0;
     RegWrt_o = (act_state == write_back_state);
     
@@ -202,27 +198,25 @@ always_comb
     op2_o = (alul_immed);
     ALU_en_o = (alu_reg | shift);
     ALUOP_o = (act_state == execute_state) ? alu_reg : 'h0;
-    RegMux_c_o = ();
+    //RegMux_c_o = ();
     ALUFR_c = ( (act_state == write_back_state) | (act_state == execute_state));
     
     // Program counter
-    PC_en_o = (branch | jump )
-    PCoper_o = 
-
-    DPMux_o =
+    //PC_en_o = (branch | jump );
+    //DPMux_o =
 
     // Memory
     data_cyc_o = ((act_state == mem_state) & ( stm | ldm));     // 
-    data_stb_o = ((act_state == mem_state) & ( stm | ldm));     // ^ I'm quite sure the loge of one should change. 
+    data_stb_o = ((act_state == mem_state) & ( stm | ldm));     // ^ Only to read memory
     data_we_o = ((act_state == mem_state) & stm);       // 1 if store memory 
-    port_we_o = ((act_state == mem_state) & out);       //
+    port_we_o = ((act_state == mem_state) & out);       // Save input data
 
     // Interruption
     reti_o  = (misc & (func_i == 3'b001));
     int_o = (misc & (func_i == 3'b010));
 
     // Branch 
-    ret_o = (branch & )
+    ret_o = (misc & (func_i == 3'b000));
     // Jump
     jsb_o = (jump & func_i[2] == 1); // 1 or 0?
 
@@ -230,21 +224,18 @@ always_comb
     stb_o = (act_state == fetch_state);
     cyc_o = (act_state == fetch_state);
 end
-/*
-always_comb begin
 
-
-    //data_adr_o <= ALU_result;
-    //data_dat_o <= std_ulogic_vector(GPR_r2);
-    //port_cyc_o <= D_state and (IR_mem_fn ?= mem_fn_inp or IR_mem_fn ?= mem_fn_out);
-    //port_stb_o <= D_state and (IR_mem_fn ?= mem_fn_inp or IR_mem_fn ?= mem_fn_out);
-    //port_we_o <= D_state and IR_mem_fn ?= mem_fn_out;
-    //port_adr_o <= ALU_result;
-    //port_dat_o <= std_ulogic_vector(GPR_r2);
-
-
+always_comb begin 
+    if (jump)
+        PCoper_o = 4'b100;
+    else if (branch)
+        PCoper_o = 4'b0100;
+    else if (misc & (func_i == 3'b000))
+        PCoper_o = 4'b1010;
+	 else
+		PCoper_o = 4'b0000;
 end
-*/
+
 
 endmodule 
 

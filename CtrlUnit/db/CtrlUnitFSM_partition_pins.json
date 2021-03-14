@@ -2,7 +2,148 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "data_cyc_o",
+					"strict" : false
+				},
+				{
+					"name" : "data_stb_o",
+					"strict" : false
+				},
+				{
+					"name" : "data_we_o",
+					"strict" : false
+				},
+				{
+					"name" : "port_we_o",
+					"strict" : false
+				},
+				{
+					"name" : "inst_ack_o",
+					"strict" : false
+				},
+				{
+					"name" : "op2_o",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOP_o[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_en_o",
+					"strict" : false
+				},
+				{
+					"name" : "RegWrt_o",
+					"strict" : false
+				},
+				{
+					"name" : "PCoper_o[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PCoper_o[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PCoper_o[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUFR_c",
+					"strict" : false
+				},
+				{
+					"name" : "ret_o",
+					"strict" : false
+				},
+				{
+					"name" : "jsb_o",
+					"strict" : false
+				},
+				{
+					"name" : "reti_o",
+					"strict" : false
+				},
+				{
+					"name" : "int_o",
+					"strict" : false
+				},
+				{
+					"name" : "stb_o",
+					"strict" : false
+				},
+				{
+					"name" : "cyc_o",
+					"strict" : false
+				},
+				{
+					"name" : "func_i[1]",
+					"strict" : false
+				},
+				{
+					"name" : "func_i[0]",
+					"strict" : false
+				},
+				{
+					"name" : "op_i[6]",
+					"strict" : false
+				},
+				{
+					"name" : "op_i[4]",
+					"strict" : false
+				},
+				{
+					"name" : "op_i[5]",
+					"strict" : false
+				},
+				{
+					"name" : "op_i[3]",
+					"strict" : false
+				},
+				{
+					"name" : "op_i[2]",
+					"strict" : false
+				},
+				{
+					"name" : "op_i[1]",
+					"strict" : false
+				},
+				{
+					"name" : "op_i[0]",
+					"strict" : false
+				},
+				{
+					"name" : "func_i[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_ack_i",
+					"strict" : false
+				},
+				{
+					"name" : "port_ack_i",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "interrupt",
+					"strict" : false
+				},
+				{
+					"name" : "inst_ack_i",
+					"strict" : false
+				}
+			]
 		}
 	]
 }
