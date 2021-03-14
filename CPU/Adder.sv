@@ -2,7 +2,7 @@ module Adder
 # (parameter width = 8)
 (
     input logic [width-1 : 0] a,
-    input logic [width-1 : 0] a,
+    input logic [width-1 : 0] b,
     input logic c_in,
     output logic [width-1 : 0] out,
     output logic c_out

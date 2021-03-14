@@ -8,11 +8,16 @@ module ALU_Logic
 	output logic [width-1 : 0] out
 
 );
-// TODO: CHECK WITH NEW INSTRUCTION SET
+/* Instruction set:
+	4'b01_00: // BIWISE A AND B
+	4'b01_01: // BIWISE A OR B
+	4'b01_10: // BIWISE A XOR B
+	4'b01_11: // BIWISE A AND ~B
+*/
 always_comb begin
 	case (s)
 		2'b00:
-			out = a & b;;
+			out = a & b;
 		2'b01:
 			out = a | b;
 		2'b10:
@@ -20,7 +25,7 @@ always_comb begin
 		2'b11:
 			out = a & ~b;
 		default:
-			out = width'hx;
+			out = 'hx;
 	endcase
 end 
 

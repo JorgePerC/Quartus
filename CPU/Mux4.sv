@@ -22,7 +22,7 @@ always_comb begin
         2'b11:
             out = d;
         default:
-            out = (width)'bx;
+            out = 'bx;
     endcase
 end
 

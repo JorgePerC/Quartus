@@ -1,0 +1,54 @@
+// #Import MUX, PROCESSOR REGISTER
+// No need to import, since all the files were overwitten
+
+module CPU (
+	input clk_i,
+	input ClkEn_i,
+	input rst_i,
+	input RegWrt_c,
+
+	input op2_c
+
+	input ALU_op_c_i
+
+	input inst_data_i,
+	input data_data_i,
+	input port_data_i,
+	input ack_i,
+	input inst_dat_i,
+	input RegMux_c_i,
+	
+	output carry_e_o,
+	output zero_e_o,
+	output rs_o,
+	output addr_e,
+	output disp_e,
+	output offset_e
+);
+
+ALU_CPU alu ();
+
+IR instructionRegister ();
+
+
+// Cables declaration
+logic 
+
+// Mux2ALU
+op2_c_e = (op2_c_i) ? ina : inb;
+
+// Mux4 
+Mux4 mux2Register (
+    .a(ALU_e),
+	.b(data_dat_i),
+	.c(port_dat_i), 
+	.d('x),
+	.s(RegMux_c)
+
+	.out(summand)
+);
+
+// 1 bit register
+BitRegister bitR ();
+
+endmodule

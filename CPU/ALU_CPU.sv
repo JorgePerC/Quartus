@@ -2,34 +2,36 @@
 //'import' 
 
 module ALU_CPU (
-    input logic [7:0] rs_i,       // Input data a
-    input logic [7:0] op2_i,      // Input data b
-    input logic [2:0] count_i,    // Only used in shift operations
-    input logic carry_i,          // Carry in 
+    input logic [7:0] rs_i,       // Input data a                   :)
+    input logic [7:0] op2_i,      // Input data b                   :)
+    input logic [2:0] count_i,    // Only used in shift operations  :)
+    input logic carry_i,          // Carry in                       :)      
 
-    input logic [3:0] ALU_op_i,   // Instruction selector
+    input logic [3:0] ALU_op_i,   // Instruction selector           :)
 
-    output logic zero_o,          // Flag is res_o = 0
-    output logic carry_o,         // Flag if res has carry out
-    output logic [7:0] res_o,     // Result from operation
+    output logic zero_o,          // Flag is res_o = 0              :)
+    output logic carry_o,         // Flag if res has carry out      :)
+    output logic [7:0] res_o      // Result from operation          :)
 );
 
-logic ALUL_out;
-logic ALUA_out;
-logic ALUS_out;
+logic [7:0] ALUL_out;
+logic [7:0] ALUA_out;
+logic [7:0] ALUS_out;
+
+logic ALUA_c_out;
+logic ALUS_c_out;
 
 // ALU_Arithmetic instantiation
 ALU_Arithmetic ALUA (
 	.a(rs_i),
 	.b(op2_i),
 	.s(ALU_op_i[1:0]),
+    .c_in(carry_i),
 	
-	.Overflow(), // ?
-	.c_out(carry_o),
-	.Negative(temp_Negative), //?
-	.Out(ALUA_out)
-	
+	.c_out(ALUA_c_out),
+	.out(ALUA_out)	
 );
+
 // ALU_Logic instantiation
 ALU_Logic ALUL (
 	.a(rs_i),
@@ -44,32 +46,37 @@ ALU_Shift  ALUS (
  .s(ALU_op_i[1:0]), // Selector
 
  .out(ALUS_out),    // res
- .co()              // ??
+ .c_out(ALUS_c_out) // carry out
 );
 // ALU_Shift instantiation
 
 always_comb begin
 
-    case (ALU_op_i)
-        4'b00_00: // SUMA a+b 
-        4'b00_01: // SUMA a+b+c
-        4'b00_10: // RESTA a-b
-        4'b00_11: // RESTA a-b-c
-
-        4'b01_00: // BIWISE A AND B
-        4'b01_01: // BIWISE A OR B
-        4'b01_10: // BIWISE A XOR B
-        4'b01_11: // BIWISE A AND ~B
-
-        4'b10_00: // SHIFT A COUNT places "rd=rs << count | if count > 0 then: C = rs(8-count)"
-        4'b10_01: // SHIFT A COUNT places "rd=rs >> count | if count > 0 then: C = rs(count-1)"
-        4'b10_11: // SHIFT A COUNT places "rd=rs <<< count| if count> 0 then: C = rs(8-count)"
-
-        // Remaining 5 possible combinations don't matter. 
-        4'bxx_xx
-        default: 
-            res_o = 8'bX
+carry_o = 1'b0; // "Default" value
+    case (ALU_op_i[3:2]) // Primeros dos bits del selector
+        
+        2'b00:
+		  begin 
+            // Check instructions at ALUA
+            res_o = ALUA_out;
+            carry_o = ALUA_c_out;
+        end
+		  2'b01:
+            // Check instructions at ALUL
+            res_o = ALUL_out;
+		  2'b10:
+        begin
+				// Check instructions at ALUS
+            res_o = ALUS_out;
+            carry_o = ALUS_c_out;
+        // Remaining 4 possible combinations don't matter. 
+        end
+		  default: 
+            res_o = 8'bX;
     endcase    
+
+    // Assign zero a value
+    zero_o = ~(|res_o);
 end
 
 

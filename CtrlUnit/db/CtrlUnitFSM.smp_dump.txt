@@ -1,0 +1,9 @@
+
+State Machine - |CtrlUnitFSM|act_state
+Name act_state.write_back_state act_state.mem_state act_state.execute_state act_state.int_state act_state.decode_state act_state.fetch_state 
+act_state.fetch_state 0 0 0 0 0 0 
+act_state.decode_state 0 0 0 0 1 1 
+act_state.int_state 0 0 0 1 0 1 
+act_state.execute_state 0 0 1 0 0 1 
+act_state.mem_state 0 1 0 0 0 1 
+act_state.write_back_state 1 0 0 0 0 1 

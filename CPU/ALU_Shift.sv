@@ -3,29 +3,36 @@ module ALU_Shift
 (
 input logic [width-1 : 0] a,        // Number to shift
 input logic [cnt_width-1 : 0] cnt,  // Bits to shift
-input logic [1 : 0] s,                      // Selector
+input logic [1 : 0] s,              // Selector
 
 output logic [width-1 : 0] out,     // res
-output logic co                     // ??
+output logic c_out                  // carry out
 );
+
+/* Instructions: 
+	4'b10_00: // SHIFT A COUNT places "rd=rs << count | if count > 0 then: C = rs(8-count)"
+	4'b10_01: // SHIFT A COUNT places "rd=rs >> count | if count > 0 then: C = rs(count-1)"
+	4'b10_10: // SHIFT A COUNT places "rd=rs <<< count| if count> 0 then: C = rs(8-count)"
+	4'b10_11: // SHIFT A COUNT places "rd=rs >>> count| if count> 0 then: C = rs(count-1)"
+*/
 
 always_comb begin 		
     case (s)		// This implements a 4 to 1 Mux 
         2'b00: 
-            {co,s} =  {1'b0, a} << cnt;  // Shiftleft by Cnt times; last bit shifted past 8 bit boundary captured as Carry
+            {c_out, out} =  {1'b0, a} << cnt;  // Shiftleft by Cnt times; last bit shifted past 8 bit boundary captured as Carry
         2'b01: 
-            {s,co} =  {a, 1'b0} >> cnt;  // Shiftright by Cnt times; last bit shifted past 8 bit boundary captured as Carry
+            {out, c_out} =  {a, 1'b0} >> cnt;  // Shiftright by Cnt times; last bit shifted past 8 bit boundary captured as Carry
         2'b10: 
             begin
-                s  = (a << cnt) | (a >> ( (width) - cnt));   // Rotate left by Cnt times by combining opposite parallel Shl Shr
-                co = s[0];
+                out  = (a << cnt) | (a >> ( (width) - cnt));   // Rotate left by Cnt times by combining opposite parallel Shl Shr
+                c_out = s[0];
             end
         2'b11: 
             begin 
-                s  = (a >> cnt) | (a << ( (width) - cnt));  // Rotate right by Cnt times by combining opposite parallel Shl Shr
-                co = s[width-1];
+                out  = (a >> cnt) | (a << ( (width) - cnt));  // Rotate right by Cnt times by combining opposite parallel Shl Shr
+                c_out = out[width-1];
             end
-        default: {co, s} =  {1'b0, a} << cnt;
+        default: {c_out, out} =  {1'b0, a} << cnt;
     endcase
 end
 

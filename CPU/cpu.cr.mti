@@ -1,0 +1,64 @@
+C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Mux4.sv {1 {vlog -work workCPU -sv -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Mux4.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Mux4
+
+Top level modules:
+	Mux4
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Shift.sv {1 {vlog -work workCPU -sv -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Shift.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU_Shift
+
+Top level modules:
+	ALU_Shift
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Logic.sv {1 {vlog -work workCPU -sv -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Logic.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU_Logic
+
+Top level modules:
+	ALU_Logic
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Arithmetic.sv {1 {vlog -work workCPU -sv -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Arithmetic.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU_Arithmetic
+
+Top level modules:
+	ALU_Arithmetic
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/IR.sv {1 {vlog -work workCPU -sv -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/IR.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module IR
+
+Top level modules:
+	IR
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/BitRegister.sv {1 {vlog -work workCPU -sv -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/BitRegister.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module BitRegister
+
+Top level modules:
+	BitRegister
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Adder.sv {1 {vlog -work workCPU -sv -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Adder.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Adder
+
+Top level modules:
+	Adder
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv {1 {vlog -work workCPU -sv -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module CPU
+
+Top level modules:
+	CPU
+
+} {} {}} C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv {1 {vlog -work workCPU -sv -stats=none C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU_CPU
+
+Top level modules:
+	ALU_CPU
+
+} {} {}}

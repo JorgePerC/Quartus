@@ -23,14 +23,14 @@ module punitfsm_tb();
 	logic			zero_o;
 
 
-		punit processing_unit	(
+		CPU processing_unit	(
 									.clk_i(clk_i),
-									.ClkEn_i(ClkEn_i),
+									.clkEn_i(ClkEn_i),
 									.rst_i(rst_i),
 									.inst_dat_i(inst_dat_i),
 									.inst_ack_i(inst_ack_i),
 									.data_dat_i(data_dat_i),
-									.port_data_i(port_data_i),
+									.port_dat_i(port_data_i),
 									.RegMux_c_i(RegMux_c_i),
 									.RegWrt_c_i(RegWrt_c_i),
 									.op2_c_i(op2_c_i),
@@ -117,23 +117,23 @@ module punitfsm_tb();
 		
 		// Initialize Register Bank with Random Data --
 		for (i = 0 ; i < 8 ;i = i + 1)
-			processing_unit.Registers.mem[i] = {$random};
+			processing_unit.MR.Mem[i] = {$random}; // Changed
 		
 		
-		newALUInstruction("add" , 0, 3, 4, 'x);
-		newALUInstruction("addi", 3, 0,'x, 255);
-		newALUInstruction("sub" , 7, 3, 3, 'x);
-		newALUInstruction("subi", 0, 5, 'x, 255);
-		newALUInstruction("sub" , 0, 0, 0, 'x);   // sets Reg 0 to Zero   R0 - R0 == 0 
-		newALUInstruction("sub" , 1, 1, 1, 'x);   // sets Reg 0 to Zero   R1 - R1 == 0
-		newALUInstruction("sub" , 2, 2, 2, 'x);   // sets Reg 0 to Zero	  R2 - R2 == 0
-		newALUInstruction("addi", 1, 0, 'x, 100);   // sets Reg 1 to 100d
-		newALUInstruction("addi", 2, 0, 'x, 200);   // sets Reg 2 to 200d 
-		newALUInstruction("add" , 3, 1, 2, 'x);   // sets Reg 3 to be addition Reg1+Reg2 (will generate Carry)
-		newALUInstruction("addci" , 4, 0, 'x, 255);   // should give 0 as result (will generate Carry)
-		newALUInstruction("subc" , 5, 0, 4, 'x);   // should give -1 as result (Reg0 - Reg4 - Cin)  0-0-1
-		newALUInstruction("add"  , 0, 0, 0, 'x);   // 0+0  should clear the carry_o
-		newALUInstruction("subc" , 5, 0, 4, 'x);   // should give 0 as result (Reg0 - Reg4 - Cin)  0-0-0
+		newALUInstruction("add" , 0, 3, 4, 'x);		// YA
+		newALUInstruction("addi", 3, 0,'x, 255);	// YA
+		newALUInstruction("sub" , 7, 3, 3, 'x);		// YA
+		newALUInstruction("subi", 0, 5, 'x, 255);	// YA 
+		newALUInstruction("sub" , 0, 0, 0, 'x);   	// sets Reg 0 to Zero   R0 - R0 == 0 YA
+		newALUInstruction("sub" , 1, 1, 1, 'x);   	// sets Reg 0 to Zero   R1 - R1 == 0 YA
+		newALUInstruction("sub" , 2, 2, 2, 'x);  	// sets Reg 0 to Zero	  R2 - R2 == 0 YA
+		newALUInstruction("addi", 1, 0, 'x, 100);   // sets Reg 1 to 100d YA
+		newALUInstruction("addi", 2, 0, 'x, 200);   // sets Reg 2 to 200d YA
+		newALUInstruction("add" , 3, 1, 2, 'x);   	// sets Reg 3 to be addition Reg1+Reg2 (will generate Carry) YA
+		newALUInstruction("addci" , 4, 0, 'x, 255); // should give 0 as result (will generate Carry) YA
+		newALUInstruction("subc" , 5, 0, 4, 'x);   	// should give -1 as result (Reg0 - Reg4 - Cin)  0-0-1 
+		newALUInstruction("add"  , 0, 0, 0, 'x);   	// 0+0  should clear the carry_o
+		newALUInstruction("subc" , 5, 0, 4, 'x);   	// should give 0 as result (Reg0 - Reg4 - Cin)  0-0-0
 		@(posedge clk_i);
 		ClkEn_i <= 0;
 		

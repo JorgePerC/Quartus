@@ -1,0 +1,284 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/ALU
+vAdder
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1615393101
+!i10b 1
+!s100 S_C[UL?adD40=PKnW59<T1
+I]Q4^N_;a@^ZWDAYE4`AKG3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 Adder_sv_unit
+S1
+Z3 dC:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU
+w1615339591
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Adder.sv
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Adder.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1615393101.000000
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Adder.sv|
+!s90 -reportprogress|300|-work|workCPU|-sv|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Adder.sv|
+!i113 1
+Z6 o-work workCPU -sv
+Z7 tCvgOpt 0
+n@adder
+vALU_Arithmetic
+R0
+R1
+!i10b 1
+!s100 1CSPag;dA@Sn1]7L4<hnU1
+ITUo;jce3T6B7kRRiZz>9W1
+R2
+!s105 ALU_Arithmetic_sv_unit
+S1
+R3
+w1615342388
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Arithmetic.sv
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Arithmetic.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Arithmetic.sv|
+!s90 -reportprogress|300|-work|workCPU|-sv|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Arithmetic.sv|
+!i113 1
+R6
+R7
+n@a@l@u_@arithmetic
+vALU_CPU
+R0
+R1
+!i10b 1
+!s100 D^^`33IBT56ZMlZ^Mo7BU3
+IJ<z1<k6j@`CG08A[ZA7IC1
+R2
+!s105 ALU_CPU_sv_unit
+S1
+R3
+w1615393089
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv
+L0 4
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv|
+!s90 -reportprogress|300|-work|workCPU|-sv|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv|
+!i113 1
+R6
+R7
+n@a@l@u_@c@p@u
+vALU_Logic
+R0
+Z8 !s110 1615393102
+!i10b 1
+!s100 LPHMRl3zHg6Kn>H8cHT3f2
+I0H8DZ5ilFK8DCG>C:;cBa0
+R2
+!s105 ALU_Logic_sv_unit
+S1
+R3
+w1615340148
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Logic.sv
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Logic.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Logic.sv|
+!s90 -reportprogress|300|-work|workCPU|-sv|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Logic.sv|
+!i113 1
+R6
+R7
+n@a@l@u_@logic
+vALU_Shift
+R0
+R8
+!i10b 1
+!s100 `jS`MUdn6UA10I`4<R`Ff1
+IG8LVbdgGHGmgef_TC8ZIj2
+R2
+!s105 ALU_Shift_sv_unit
+S1
+R3
+w1615342433
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Shift.sv
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Shift.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z9 !s108 1615393102.000000
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Shift.sv|
+!s90 -reportprogress|300|-work|workCPU|-sv|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Shift.sv|
+!i113 1
+R6
+R7
+n@a@l@u_@shift
+vBitRegister
+R0
+R8
+!i10b 1
+!s100 VP=LJWbWoCf1OgbmVj84j3
+I8UIQc`kDV6H__i@mR5Y>L2
+R2
+!s105 BitRegister_sv_unit
+S1
+R3
+w1615342248
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/BitRegister.sv
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/BitRegister.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/BitRegister.sv|
+!s90 -reportprogress|300|-work|workCPU|-sv|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/BitRegister.sv|
+!i113 1
+R6
+R7
+n@bit@register
+vCPU
+R0
+R8
+!i10b 1
+!s100 IOGSBH`?^VSaS=SUHAV=@0
+I4SOgYNH7MkXF5XTPBHE433
+R2
+!s105 CPU_sv_unit
+S1
+R3
+w1615388474
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv
+L0 6
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv|
+!s90 -reportprogress|300|-work|workCPU|-sv|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv|
+!i113 1
+R6
+R7
+n@c@p@u
+vIR
+R0
+R8
+!i10b 1
+!s100 QYNcSghDh5f;KP=MA>ab_0
+I`?ekcd>_ILR<GNL`5hm110
+R2
+!s105 IR_sv_unit
+S1
+R3
+w1615387669
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/IR.sv
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/IR.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/IR.sv|
+!s90 -reportprogress|300|-work|workCPU|-sv|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/IR.sv|
+!i113 1
+R6
+R7
+n@i@r
+vMemoryRegister
+R0
+Z10 !s110 1615393103
+!i10b 1
+!s100 MQYbQDMK;dkdT4enRfdTg1
+IokJlYCFzb>[Y`oWYz>5922
+R2
+!s105 MemoryRegister_sv_unit
+S1
+R3
+w1615392271
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/MemoryRegister.sv
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/MemoryRegister.sv
+L0 4
+R4
+r1
+!s85 0
+31
+Z11 !s108 1615393103.000000
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/MemoryRegister.sv|
+!s90 -reportprogress|300|-work|workCPU|-sv|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/MemoryRegister.sv|
+!i113 1
+R6
+R7
+n@memory@register
+vMux4
+R0
+R10
+!i10b 1
+!s100 2FI7US<Yk98NabK2D_oKc3
+I=zm4]DbS8@EL>nflOYHKJ2
+R2
+!s105 Mux4_sv_unit
+S1
+R3
+w1615340244
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Mux4.sv
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Mux4.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Mux4.sv|
+!s90 -reportprogress|300|-work|workCPU|-sv|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Mux4.sv|
+!i113 1
+R6
+R7
+n@mux4
+vpunitfsm_tb
+R0
+R10
+!i10b 1
+!s100 4C7SPVH[`RV2z?1WSG53=3
+IDTH3oRM;n<``XM?FKoR0_2
+R2
+!s105 punitfsm_tb_sv_unit
+S1
+R3
+w1615345276
+8C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/punitfsm_tb.sv
+FC:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/punitfsm_tb.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/punitfsm_tb.sv|
+!s90 -reportprogress|300|-work|workCPU|-sv|-stats=none|C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/punitfsm_tb.sv|
+!i113 1
+R6
+R7

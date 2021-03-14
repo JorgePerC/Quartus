@@ -2,16 +2,16 @@ module BitRegister (
     input clk,
     input clk_en,
     input logic rst,
-    input logic c_1,      // Stored bit
+    input logic c_i,      // Stored bit
 
     output logic c_o
 );
 
-always_ff @(posedge clk, posedge clk_en)
+always_ff @(posedge clk, posedge clk_en, posedge rst) begin
     if (rst)
         c_o <= 0;
     else
-        c_o <= c_1
+        c_o <= c_i;
 end
 
 endmodule

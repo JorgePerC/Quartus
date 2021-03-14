@@ -12,13 +12,15 @@ module ProcessorRegister (
     input logic [3:0] rd_i,         // Memory address to write data
 
     output logic [7:0] rs_o,        // Data from address rs_i
-    output logic [7:0] rs2_o,       // Data from address rs2_i
-    output logic [7:0] rd_o         // Data from address rd_i
+    output logic [7:0] rs2_o        // Data from address rs2_i
 
 );
 
 //Memory bank
 logic [7:0] Mem [7:0]; // 8 registers x 8 bits
+logic rs_o_stored;
+logic rs2_o_stored;
+
 
 integer i; //Variable for loop
 
@@ -34,15 +36,20 @@ always_ff @((posedge clk and posedge clk_en) or posedge rst) begin
 end
 
 // Read from memory bank
-always_comb begin 
-    rs_o = Mem [rs_i]; // Outputdata is data stored at addres
+// Save into rs_o_stored register
+
+always_ff @(posedge clk) begin 
+    rs_o_stored <= Mem [rs_i]; // Output data is data stored at address
     
-    rs2_o = Mem [rs2_i];
-    
+    rs2_o_stored <= Mem [rs2_i];
+end
+
+
+always_comb begin
     // If valid addres, give back data, else 'z
-    rs_o = rs_i ? rs_o : 'z;
-    rs2_o = rs2_i ? rs2_o : 'z;
-    // Shold we include rd_o?
+    rs_o = rs_i ? rs_o_stored : 'z;
+    rs2_o = rs2_i ? rs2_o_stored : 'z;
+    
 end
 
 endmodule

@@ -7,52 +7,46 @@ module ALU_Arithmetic
 	input logic c_in,
 
 	output logic [width-1 : 0] out,
-	output logic c_out,
-	output logic negative,
-	output logic overflow
+	output logic c_out
+	// No neg, neither overflow
 );
 
-logic c_in;
+
 logic [width-1 : 0] summand;
+logic temp_c_in; //Temporal Cin
 
-// TODO: Verificar con nuevas instrucciones :)
-// 00 -> Suma
-// 01 -> Resta
-// 00 -> +0 (+1)
-// 00 -> +0 (+0)
+// Nuevas instrucciones :)
 
-Mux4 mux (
-	.a(b),
-	.b(~b),
-	.c({width{1'b0}}), // Repeat 0 8 times. 
-	.d({width{1'b0}}), // Can we leave blank?
-	.s(s),
-	
-	.out(summand)
-);
+// 4'b00_00: // SUMA a+b 
+// 4'b00_01: // SUMA a+b+c
+// 4'b00_10: // RESTA a-b
+// 4'b00_11: // RESTA a-b-c
 
 always_comb begin
-		// Para tener el c_out y out y partirlos
-		c_in = s[0] ^ s[1];
+	// Based on coding meaning
+	summand = s[1] ? ~b : b;
+	case (s)
+		2'b00:
+			temp_c_in = 1'b0;
+		2'b01:
+			temp_c_in = c_in;
+		2'b10:
+			temp_c_in = 1'b1;
+		2'b11:
+			temp_c_in = ~c_in;
+		default: 
+			temp_c_in = c_in;
+	endcase
 
 end
-
 	
 Adder suma (
 .a(a),
-.a(summand),
-.c_in(c_in), // Repeat 
+.b(summand),
+.c_in(temp_c_in), 
 .out(out),
 .c_out(c_out)
 );	
-
-always_comb begin
-	
-    negative = out[width-1] ; //También hay que saber si hubo resta o no :)	
-    overflow = (summand[width-1] ^ A[width-1]) ? 0 : (out[width-1] ^ A[width-1]) ; //Only if both are same will be overflow
-		
-end
-
 
 
 endmodule
