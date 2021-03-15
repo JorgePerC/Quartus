@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPU
-Wed Mar 10 16:31:15 2021
+Sun Mar 14 22:55:16 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,19 +13,28 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. Logic Cells Representing Combinational Loops
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: ALU_CPU:alu|ALU_Arithmetic:ALUA
- 13. Parameter Settings for User Entity Instance: ALU_CPU:alu|ALU_Arithmetic:ALUA|Adder:suma
- 14. Parameter Settings for User Entity Instance: ALU_CPU:alu|ALU_Logic:ALUL
- 15. Parameter Settings for User Entity Instance: ALU_CPU:alu|ALU_Shift:ALUS
- 16. Parameter Settings for User Entity Instance: Mux4:mux2Register
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
- 20. Analysis & Synthesis Suppressed Messages
+  8. State Machine - |CPU|CtrlUnitFSM:CU|act_state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: CtrlUnitFSM:CU
+ 13. Parameter Settings for User Entity Instance: PU:processingUnit|ALU_CPU:alu|ALU_Arithmetic:ALUA
+ 14. Parameter Settings for User Entity Instance: PU:processingUnit|ALU_CPU:alu|ALU_Arithmetic:ALUA|Adder:suma
+ 15. Parameter Settings for User Entity Instance: PU:processingUnit|ALU_CPU:alu|ALU_Logic:ALUL
+ 16. Parameter Settings for User Entity Instance: PU:processingUnit|ALU_CPU:alu|ALU_Shift:ALUS
+ 17. Parameter Settings for User Entity Instance: PU:processingUnit|Mux4:mux2Register
+ 18. Port Connectivity Checks: "Stack:stack"
+ 19. Port Connectivity Checks: "PU:processingUnit|Mux4:mux2Register"
+ 20. Port Connectivity Checks: "PU:processingUnit|ALU_CPU:alu"
+ 21. Port Connectivity Checks: "PU:processingUnit|IR:instructionRegister"
+ 22. Port Connectivity Checks: "PU:processingUnit"
+ 23. Port Connectivity Checks: "DataMemory:DataMem"
+ 24. Port Connectivity Checks: "NewProgramCounter:NewPC"
+ 25. Port Connectivity Checks: "CtrlUnitFSM:CU"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+ 29. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -51,16 +60,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 10 16:31:15 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 14 22:55:16 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; CPU                                         ;
 ; Top-level Entity Name              ; CPU                                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 339                                         ;
-;     Total combinational functions  ; 322                                         ;
-;     Dedicated logic registers      ; 41                                          ;
-; Total registers                    ; 41                                          ;
-; Total pins                         ; 90                                          ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 48                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -165,165 +174,126 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                              ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                          ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
-; CPU.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv            ;         ;
-; IR.sv                            ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/IR.sv             ;         ;
-; MemoryRegister.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/MemoryRegister.sv ;         ;
-; ALU_CPU.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv        ;         ;
-; ALU_Shift.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Shift.sv      ;         ;
-; ALU_Arithmetic.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Arithmetic.sv ;         ;
-; ALU_Logic.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Logic.sv      ;         ;
-; Mux4.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Mux4.sv           ;         ;
-; Adder.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Adder.sv          ;         ;
-; BitRegister.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/BitRegister.sv    ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; Stack.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv               ;         ;
+; PU.sv                            ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/PU.sv                  ;         ;
+; NewProgramCounter.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/NewProgramCounter.sv   ;         ;
+; InstructionRegister.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv ;         ;
+; FlagReg.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/FlagReg.sv             ;         ;
+; CtrlUnitFSM.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CtrlUnitFSM.sv         ;         ;
+; CPU.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv                 ;         ;
+; IR.sv                            ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/IR.sv                  ;         ;
+; MemoryRegister.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/MemoryRegister.sv      ;         ;
+; ALU_CPU.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv             ;         ;
+; ALU_Shift.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Shift.sv           ;         ;
+; ALU_Arithmetic.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Arithmetic.sv      ;         ;
+; ALU_Logic.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Logic.sv           ;         ;
+; Mux4.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Mux4.sv                ;         ;
+; Adder.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Adder.sv               ;         ;
+; BitRegister.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/BitRegister.sv         ;         ;
+; DataMemory.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/DataMemory.sv          ;         ;
+; ProgramCounter.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv      ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 339         ;
-;                                             ;             ;
-; Total combinational functions               ; 322         ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 241         ;
-;     -- 3 input functions                    ; 72          ;
-;     -- <=2 input functions                  ; 9           ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 313         ;
-;     -- arithmetic mode                      ; 9           ;
-;                                             ;             ;
-; Total registers                             ; 41          ;
-;     -- Dedicated logic registers            ; 41          ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 90          ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; rst_i~input ;
-; Maximum fan-out                             ; 82          ;
-; Total fan-out                               ; 1446        ;
-; Average fan-out                             ; 2.66        ;
-+---------------------------------------------+-------------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+;                                             ;          ;
+; Total combinational functions               ; 0        ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 0        ;
+;     -- 3 input functions                    ; 0        ;
+;     -- <=2 input functions                  ; 0        ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 0        ;
+;     -- arithmetic mode                      ; 0        ;
+;                                             ;          ;
+; Total registers                             ; 0        ;
+;     -- Dedicated logic registers            ; 0        ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 48       ;
+;                                             ;          ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; clk_en_i ;
+; Maximum fan-out                             ; 1        ;
+; Total fan-out                               ; 48       ;
+; Average fan-out                             ; 0.50     ;
++---------------------------------------------+----------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                ;
-+-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------+----------------+--------------+
-; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                             ; Entity Name    ; Library Name ;
-+-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------+----------------+--------------+
-; |CPU                        ; 322 (8)             ; 41 (8)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 90   ; 0            ; 0          ; |CPU                                            ; CPU            ; work         ;
-;    |ALU_CPU:alu|            ; 146 (66)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CPU|ALU_CPU:alu                                ; ALU_CPU        ; work         ;
-;       |ALU_Arithmetic:ALUA| ; 19 (9)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CPU|ALU_CPU:alu|ALU_Arithmetic:ALUA            ; ALU_Arithmetic ; work         ;
-;          |Adder:suma|       ; 10 (10)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CPU|ALU_CPU:alu|ALU_Arithmetic:ALUA|Adder:suma ; Adder          ; work         ;
-;       |ALU_Shift:ALUS|      ; 61 (61)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CPU|ALU_CPU:alu|ALU_Shift:ALUS                 ; ALU_Shift      ; work         ;
-;    |IR:instructionRegister| ; 0 (0)               ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CPU|IR:instructionRegister                     ; IR             ; work         ;
-;    |MemoryRegister:MR|      ; 152 (152)           ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CPU|MemoryRegister:MR                          ; MemoryRegister ; work         ;
-;    |Mux4:mux2Register|      ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CPU|Mux4:mux2Register                          ; Mux4           ; work         ;
-+-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------+----------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; |CPU                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 48   ; 0            ; 0          ; |CPU                ; CPU         ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                       ;
-+-----------------------------------------------------+----------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal        ; Free of Timing Hazards ;
-+-----------------------------------------------------+----------------------------+------------------------+
-; MemoryRegister:MR|Mem[2][5]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[1][5]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[0][5]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[3][5]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[5][5]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[6][5]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[4][5]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[7][5]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[2][4]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[1][4]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[0][4]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[3][4]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[5][4]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[6][4]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[4][4]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[7][4]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[2][3]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[1][3]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[0][3]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[3][3]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[5][3]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[6][3]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[4][3]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[7][3]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[2][2]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[1][2]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[0][2]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[3][2]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[5][2]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[6][2]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[4][2]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[7][2]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[2][1]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[1][1]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[0][1]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[3][1]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[5][1]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[6][1]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[4][1]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[7][1]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[2][0]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[1][0]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[0][0]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[3][0]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[5][0]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[6][0]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[4][0]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[7][0]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[2][6]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[1][6]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[0][6]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[3][6]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[5][6]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[6][6]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[4][6]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[7][6]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[2][7]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[1][7]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[0][7]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[3][7]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[5][7]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[6][7]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[4][7]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; MemoryRegister:MR|Mem[7][7]                         ; MemoryRegister:MR|Decoder0 ; yes                    ;
-; Number of user-specified and inferred latches = 64  ;                            ;                        ;
-+-----------------------------------------------------+----------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |CPU|CtrlUnitFSM:CU|act_state                                                                                                                                  ;
++----------------------------+----------------------------+---------------------+-------------------------+---------------------+------------------------+-----------------------+
+; Name                       ; act_state.write_back_state ; act_state.mem_state ; act_state.execute_state ; act_state.int_state ; act_state.decode_state ; act_state.fetch_state ;
++----------------------------+----------------------------+---------------------+-------------------------+---------------------+------------------------+-----------------------+
+; act_state.fetch_state      ; 0                          ; 0                   ; 0                       ; 0                   ; 0                      ; 0                     ;
+; act_state.decode_state     ; 0                          ; 0                   ; 0                       ; 0                   ; 1                      ; 1                     ;
+; act_state.int_state        ; 0                          ; 0                   ; 0                       ; 1                   ; 0                      ; 1                     ;
+; act_state.execute_state    ; 0                          ; 0                   ; 1                       ; 0                   ; 0                      ; 1                     ;
+; act_state.mem_state        ; 0                          ; 1                   ; 0                       ; 0                   ; 0                      ; 1                     ;
+; act_state.write_back_state ; 1                          ; 0                   ; 0                       ; 0                   ; 0                      ; 1                     ;
++----------------------------+----------------------------+---------------------+-------------------------+---------------------+------------------------+-----------------------+
 
 
-+------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops               ;
-+--------------------------------------------------------+---+
-; Logic Cell Name                                        ;   ;
-+--------------------------------------------------------+---+
-; ALU_CPU:alu|Mux8~0                                     ;   ;
-; Number of logic cells representing combinational loops ; 1 ;
-+--------------------------------------------------------+---+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
++---------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                      ;
++----------------------------------------------------------------+----------------------------------------+
+; Register name                                                  ; Reason for Removal                     ;
++----------------------------------------------------------------+----------------------------------------+
+; PU:processingUnit|IR:instructionRegister|stored_instruction[2] ; Lost fanout                            ;
+; DataMemory:DataMem|data_o[0]                                   ; Stuck at GND due to stuck port data_in ;
+; CtrlUnitFSM:CU|act_state.int_state                             ; Lost fanout                            ;
+; CtrlUnitFSM:CU|act_state~2                                     ; Lost fanout                            ;
+; CtrlUnitFSM:CU|act_state~3                                     ; Lost fanout                            ;
+; CtrlUnitFSM:CU|act_state~4                                     ; Lost fanout                            ;
+; CtrlUnitFSM:CU|act_state.decode_state                          ; Stuck at GND due to stuck port data_in ;
+; CtrlUnitFSM:CU|act_state.execute_state                         ; Stuck at GND due to stuck port data_in ;
+; CtrlUnitFSM:CU|act_state.write_back_state                      ; Stuck at GND due to stuck port data_in ;
+; CtrlUnitFSM:CU|act_state.fetch_state                           ; Lost fanout                            ;
+; CtrlUnitFSM:CU|act_state.mem_state                             ; Stuck at GND due to stuck port data_in ;
+; DataMemory:DataMem|read_ack                                    ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 12                         ;                                        ;
++----------------------------------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                           ;
++---------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+; Register name                         ; Reason for Removal        ; Registers Removed due to This Register                                            ;
++---------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+; CtrlUnitFSM:CU|act_state.decode_state ; Stuck at GND              ; CtrlUnitFSM:CU|act_state.execute_state, CtrlUnitFSM:CU|act_state.write_back_state ;
+;                                       ; due to stuck port data_in ;                                                                                   ;
+; CtrlUnitFSM:CU|act_state.mem_state    ; Stuck at GND              ; DataMemory:DataMem|read_ack                                                       ;
+;                                       ; due to stuck port data_in ;                                                                                   ;
++---------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -331,80 +301,170 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 41    ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 17    ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 17    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |CPU|MemoryRegister:MR|rs2_o_stored[6]      ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |CPU|MemoryRegister:MR|rs_o_stored[5]       ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |CPU|ALU_CPU:alu|ALU_Shift:ALUS|ShiftRight0 ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |CPU|ALU_CPU:alu|ALU_Shift:ALUS|ShiftRight1 ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |CPU|Mux4:mux2Register|Mux5                 ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |CPU|ALU_CPU:alu|ALU_Shift:ALUS|ShiftLeft2  ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |CPU|ALU_CPU:alu|Mux2                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-
-
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ALU_CPU:alu|ALU_Arithmetic:ALUA ;
-+----------------+-------+-----------------------------------------------------+
-; Parameter Name ; Value ; Type                                                ;
-+----------------+-------+-----------------------------------------------------+
-; width          ; 8     ; Signed Integer                                      ;
-+----------------+-------+-----------------------------------------------------+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CtrlUnitFSM:CU ;
++------------------+-------+----------------------------------+
+; Parameter Name   ; Value ; Type                             ;
++------------------+-------+----------------------------------+
+; fetch_state      ; 000   ; Unsigned Binary                  ;
+; decode_state     ; 001   ; Unsigned Binary                  ;
+; int_state        ; 010   ; Unsigned Binary                  ;
+; execute_state    ; 011   ; Unsigned Binary                  ;
+; mem_state        ; 100   ; Unsigned Binary                  ;
+; write_back_state ; 101   ; Unsigned Binary                  ;
++------------------+-------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ALU_CPU:alu|ALU_Arithmetic:ALUA|Adder:suma ;
-+----------------+-------+----------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                           ;
-+----------------+-------+----------------------------------------------------------------+
-; width          ; 8     ; Signed Integer                                                 ;
-+----------------+-------+----------------------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PU:processingUnit|ALU_CPU:alu|ALU_Arithmetic:ALUA ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; width          ; 8     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ALU_CPU:alu|ALU_Logic:ALUL ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; width          ; 8     ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PU:processingUnit|ALU_CPU:alu|ALU_Arithmetic:ALUA|Adder:suma ;
++----------------+-------+----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                             ;
++----------------+-------+----------------------------------------------------------------------------------+
+; width          ; 8     ; Signed Integer                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ALU_CPU:alu|ALU_Shift:ALUS ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; width          ; 8     ; Signed Integer                                 ;
-; cnt_width      ; 3     ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PU:processingUnit|ALU_CPU:alu|ALU_Logic:ALUL ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; width          ; 8     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Mux4:mux2Register ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; width          ; 8     ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PU:processingUnit|ALU_CPU:alu|ALU_Shift:ALUS ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; width          ; 8     ; Signed Integer                                                   ;
+; cnt_width      ; 3     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PU:processingUnit|Mux4:mux2Register ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; width          ; 8     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Stack:stack"                                                     ;
++-------+---------+------------------+--------------------------------------------------------+
+; Port  ; Type    ; Severity         ; Details                                                ;
++-------+---------+------------------+--------------------------------------------------------+
+; Stack ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity ;
+; Full  ; Output  ; Info             ; Explicitly unconnected                                 ;
+; Empty ; Output  ; Info             ; Explicitly unconnected                                 ;
+; Err   ; Output  ; Info             ; Explicitly unconnected                                 ;
+; SP    ; Output  ; Info             ; Explicitly unconnected                                 ;
++-------+---------+------------------+--------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "PU:processingUnit|Mux4:mux2Register" ;
++------+-------+----------+---------------------------------------+
+; Port ; Type  ; Severity ; Details                               ;
++------+-------+----------+---------------------------------------+
+; s    ; Input ; Info     ; Stuck at GND                          ;
++------+-------+----------+---------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PU:processingUnit|ALU_CPU:alu"                                                                                                                      ;
++----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                          ;
++----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; ALU_op_i ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "ALU_op_i[3..1]" will be connected to GND. ;
++----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PU:processingUnit|IR:instructionRegister"                                                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
+; op_o ; Output ; Warning  ; Output or bidir port (7 bits) is wider than the port expression (3 bits) it drives; bit(s) "op_o[6..3]" have no fanouts ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PU:processingUnit"                                                                                                                                                                   ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; op2_i    ; Input  ; Warning  ; Input port expression (7 bits) is wider than the input port (1 bits) it drives.  The 6 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rs_o     ; Output ; Info     ; Explicitly unconnected                                                                                                                                                           ;
+; offset_o ; Output ; Info     ; Explicitly unconnected                                                                                                                                                           ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DataMemory:DataMem"                                                                                                                                                     ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                               ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data_i ; Input  ; Info     ; Explicitly unconnected                                                                                                                                                ;
+; ack_o  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (8 bits) it drives.  The 7 most-significant bit(s) in the port expression will be connected to GND. ;
+; data_o ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "data_o[7..1]" have no fanouts                                             ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "NewProgramCounter:NewPC"                                                                                                                                                           ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; int_i ; Input ; Warning  ; Input port expression (12 bits) is wider than the input port (1 bits) it drives.  The 11 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; stk_i ; Input ; Warning  ; Input port expression (12 bits) is wider than the input port (1 bits) it drives.  The 11 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CtrlUnitFSM:CU"                                                                                                                                                             ;
++------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                                               ;
++------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; op_i       ; Input  ; Warning  ; Input port expression (3 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "op_i[6..3]" will be connected to GND.                          ;
+; port_we_o  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; port_ack_i ; Input  ; Info     ; Explicitly unconnected                                                                                                                                                ;
+; op2_o      ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (7 bits) it drives.  The 6 most-significant bit(s) in the port expression will be connected to GND. ;
+; ALU_en_o   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; PC_en_o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; ALUFR_o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; stb_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; cyc_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; DPMux_o    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
++------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -412,23 +472,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 90                          ;
-; cycloneiii_ff         ; 41                          ;
-;     ENA CLR           ; 17                          ;
-;     plain             ; 24                          ;
-; cycloneiii_lcell_comb ; 323                         ;
-;     arith             ; 9                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 8                           ;
-;     normal            ; 314                         ;
+; boundary_port         ; 48                          ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 64                          ;
-;         4 data inputs ; 241                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 4.61                        ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -437,7 +487,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -447,17 +497,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Mar 10 16:30:43 2021
+    Info: Processing started: Sun Mar 14 22:54:41 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file stack.sv
+    Info (12023): Found entity 1: Stack File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pu.sv
+    Info (12023): Found entity 1: PU File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/PU.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file newprogramcounter.sv
+    Info (12023): Found entity 1: NewProgramCounter File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/NewProgramCounter.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file instructionregister.sv
+    Info (12023): Found entity 1: InstructionRegister File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file flagreg.sv
+    Info (12023): Found entity 1: FlagReg File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/FlagReg.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ctrlunitfsm.sv
+    Info (12023): Found entity 1: CtrlUnitFSM File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CtrlUnitFSM.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file cpu.sv
-    Info (12023): Found entity 1: CPU File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 6
+    Info (12023): Found entity 1: CPU File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file ir.sv
     Info (12023): Found entity 1: IR File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/IR.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file memoryregister.sv
     Info (12023): Found entity 1: MemoryRegister File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/MemoryRegister.sv Line: 4
-Warning (12019): Can't analyze file -- file SystemVerilog4.sv is missing
 Info (12021): Found 1 design units, including 1 entities, in source file alu_cpu.sv
     Info (12023): Found entity 1: ALU_CPU File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file alu_shift.sv
@@ -472,9 +533,30 @@ Info (12021): Found 1 design units, including 1 entities, in source file adder.s
     Info (12023): Found entity 1: Adder File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Adder.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file bitregister.sv
     Info (12023): Found entity 1: BitRegister File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/BitRegister.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file datamemory.sv
+    Info (12023): Found entity 1: DataMemory File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/DataMemory.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file programcounter.sv
+    Info (12023): Found entity 1: ProgramCounter File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at PU.sv(73): created implicit net for "RegWrt_c_i" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/PU.sv Line: 73
+Warning (10236): Verilog HDL Implicit Net warning at PU.sv(111): created implicit net for "ALUOp_c_i" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/PU.sv Line: 111
+Warning (10236): Verilog HDL Implicit Net warning at PU.sv(130): created implicit net for "RegMux_c_i" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/PU.sv Line: 130
+Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(63): created implicit net for "inst_ack" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 63
+Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(172): created implicit net for "ALUFR_c" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 172
+Warning (10236): Verilog HDL Implicit Net warning at CPU.sv(229): created implicit net for "PCEN_c" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 229
 Info (12127): Elaborating entity "CPU" for the top level hierarchy
-Info (12128): Elaborating entity "IR" for hierarchy "IR:instructionRegister" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 66
-Info (12128): Elaborating entity "MemoryRegister" for hierarchy "MemoryRegister:MR" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 85
+Info (12128): Elaborating entity "CtrlUnitFSM" for hierarchy "CtrlUnitFSM:CU" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 91
+Warning (10230): Verilog HDL assignment warning at CtrlUnitFSM.sv(195): truncated value with size 32 to match size of target (1) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CtrlUnitFSM.sv Line: 195
+Warning (10230): Verilog HDL assignment warning at CtrlUnitFSM.sv(201): truncated value with size 32 to match size of target (4) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CtrlUnitFSM.sv Line: 201
+Warning (10230): Verilog HDL assignment warning at CtrlUnitFSM.sv(202): truncated value with size 32 to match size of target (2) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CtrlUnitFSM.sv Line: 202
+Info (12128): Elaborating entity "NewProgramCounter" for hierarchy "NewProgramCounter:NewPC" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 112
+Warning (10230): Verilog HDL assignment warning at NewProgramCounter.sv(32): truncated value with size 32 to match size of target (12) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/NewProgramCounter.sv Line: 32
+Warning (10230): Verilog HDL assignment warning at NewProgramCounter.sv(37): truncated value with size 32 to match size of target (12) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/NewProgramCounter.sv Line: 37
+Warning (10230): Verilog HDL assignment warning at NewProgramCounter.sv(41): truncated value with size 32 to match size of target (12) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/NewProgramCounter.sv Line: 41
+Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:DataMem" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 128
+Info (12128): Elaborating entity "PU" for hierarchy "PU:processingUnit" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 161
+Warning (10030): Net "RegMux_c_i" at PU.sv(130) has no driver or initial value, using a default initial value '0' File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/PU.sv Line: 130
+Info (12128): Elaborating entity "IR" for hierarchy "PU:processingUnit|IR:instructionRegister" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/PU.sv Line: 62
+Info (12128): Elaborating entity "MemoryRegister" for hierarchy "PU:processingUnit|MemoryRegister:MR" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/PU.sv Line: 81
 Warning (10240): Verilog HDL Always Construct warning at MemoryRegister.sv(30): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/MemoryRegister.sv Line: 30
 Info (10041): Inferred latch for "Mem[0][0]" at MemoryRegister.sv(30) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/MemoryRegister.sv Line: 30
 Info (10041): Inferred latch for "Mem[0][1]" at MemoryRegister.sv(30) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/MemoryRegister.sv Line: 30
@@ -540,32 +622,150 @@ Info (10041): Inferred latch for "Mem[7][4]" at MemoryRegister.sv(30) File: C:/U
 Info (10041): Inferred latch for "Mem[7][5]" at MemoryRegister.sv(30) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/MemoryRegister.sv Line: 30
 Info (10041): Inferred latch for "Mem[7][6]" at MemoryRegister.sv(30) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/MemoryRegister.sv Line: 30
 Info (10041): Inferred latch for "Mem[7][7]" at MemoryRegister.sv(30) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/MemoryRegister.sv Line: 30
-Info (12128): Elaborating entity "BitRegister" for hierarchy "BitRegister:bitR" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 108
+Info (12128): Elaborating entity "BitRegister" for hierarchy "PU:processingUnit|BitRegister:bitR" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/PU.sv Line: 104
 Critical Warning (10237): Verilog HDL warning at BitRegister.sv(14): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/BitRegister.sv Line: 14
-Info (12128): Elaborating entity "ALU_CPU" for hierarchy "ALU_CPU:alu" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 121
-Info (12128): Elaborating entity "ALU_Arithmetic" for hierarchy "ALU_CPU:alu|ALU_Arithmetic:ALUA" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv Line: 33
-Info (12128): Elaborating entity "Adder" for hierarchy "ALU_CPU:alu|ALU_Arithmetic:ALUA|Adder:suma" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Arithmetic.sv Line: 49
-Info (12128): Elaborating entity "ALU_Logic" for hierarchy "ALU_CPU:alu|ALU_Logic:ALUL" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv Line: 42
+Info (12128): Elaborating entity "ALU_CPU" for hierarchy "PU:processingUnit|ALU_CPU:alu" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/PU.sv Line: 117
+Info (12128): Elaborating entity "ALU_Arithmetic" for hierarchy "PU:processingUnit|ALU_CPU:alu|ALU_Arithmetic:ALUA" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv Line: 33
+Info (12128): Elaborating entity "Adder" for hierarchy "PU:processingUnit|ALU_CPU:alu|ALU_Arithmetic:ALUA|Adder:suma" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Arithmetic.sv Line: 49
+Info (12128): Elaborating entity "ALU_Logic" for hierarchy "PU:processingUnit|ALU_CPU:alu|ALU_Logic:ALUL" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv Line: 42
 Warning (10230): Verilog HDL assignment warning at ALU_Logic.sv(28): truncated value with size 32 to match size of target (8) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_Logic.sv Line: 28
-Info (12128): Elaborating entity "ALU_Shift" for hierarchy "ALU_CPU:alu|ALU_Shift:ALUS" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv Line: 50
-Info (12128): Elaborating entity "Mux4" for hierarchy "Mux4:mux2Register" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 137
+Info (12128): Elaborating entity "ALU_Shift" for hierarchy "PU:processingUnit|ALU_CPU:alu|ALU_Shift:ALUS" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ALU_CPU.sv Line: 50
+Info (12128): Elaborating entity "Mux4" for hierarchy "PU:processingUnit|Mux4:mux2Register" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/PU.sv Line: 133
 Warning (10230): Verilog HDL assignment warning at Mux4.sv(25): truncated value with size 32 to match size of target (8) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Mux4.sv Line: 25
-Info (286030): Timing-Driven Synthesis is running
+Info (12128): Elaborating entity "FlagReg" for hierarchy "FlagReg:Flagreg" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 183
+Critical Warning (10237): Verilog HDL warning at FlagReg.sv(35): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/FlagReg.sv Line: 35
+Critical Warning (10237): Verilog HDL warning at FlagReg.sv(36): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/FlagReg.sv Line: 36
+Info (12128): Elaborating entity "InstructionRegister" for hierarchy "InstructionRegister:InirReg" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 205
+Warning (10240): Verilog HDL Always Construct warning at InstructionRegister.sv(18): inferring latch(es) for variable "intc_o", which holds its previous value in one or more paths through the always construct File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Warning (10240): Verilog HDL Always Construct warning at InstructionRegister.sv(18): inferring latch(es) for variable "intz_o", which holds its previous value in one or more paths through the always construct File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Warning (10240): Verilog HDL Always Construct warning at InstructionRegister.sv(18): inferring latch(es) for variable "pc_o", which holds its previous value in one or more paths through the always construct File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (10041): Inferred latch for "pc_o[0]" at InstructionRegister.sv(18) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (10041): Inferred latch for "pc_o[1]" at InstructionRegister.sv(18) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (10041): Inferred latch for "pc_o[2]" at InstructionRegister.sv(18) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (10041): Inferred latch for "pc_o[3]" at InstructionRegister.sv(18) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (10041): Inferred latch for "pc_o[4]" at InstructionRegister.sv(18) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (10041): Inferred latch for "pc_o[5]" at InstructionRegister.sv(18) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (10041): Inferred latch for "pc_o[6]" at InstructionRegister.sv(18) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (10041): Inferred latch for "pc_o[7]" at InstructionRegister.sv(18) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (10041): Inferred latch for "pc_o[8]" at InstructionRegister.sv(18) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (10041): Inferred latch for "pc_o[9]" at InstructionRegister.sv(18) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (10041): Inferred latch for "pc_o[10]" at InstructionRegister.sv(18) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (10041): Inferred latch for "pc_o[11]" at InstructionRegister.sv(18) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (10041): Inferred latch for "intz_o" at InstructionRegister.sv(18) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (10041): Inferred latch for "intc_o" at InstructionRegister.sv(18) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/InstructionRegister.sv Line: 18
+Info (12128): Elaborating entity "Stack" for hierarchy "Stack:stack" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 222
+Warning (10230): Verilog HDL assignment warning at Stack.sv(26): truncated value with size 12 to match size of target (4) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 26
+Warning (10230): Verilog HDL assignment warning at Stack.sv(33): truncated value with size 12 to match size of target (4) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 33
+Warning (10230): Verilog HDL assignment warning at Stack.sv(37): truncated value with size 32 to match size of target (3) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 37
+Warning (10230): Verilog HDL assignment warning at Stack.sv(38): truncated value with size 12 to match size of target (4) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 38
+Warning (10230): Verilog HDL assignment warning at Stack.sv(57): truncated value with size 32 to match size of target (3) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 57
+Warning (10240): Verilog HDL Always Construct warning at Stack.sv(21): inferring latch(es) for variable "Empty", which holds its previous value in one or more paths through the always construct File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 21
+Warning (10240): Verilog HDL Always Construct warning at Stack.sv(21): inferring latch(es) for variable "Err", which holds its previous value in one or more paths through the always construct File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 21
+Warning (10240): Verilog HDL Always Construct warning at Stack.sv(21): inferring latch(es) for variable "SP", which holds its previous value in one or more paths through the always construct File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 21
+Warning (10240): Verilog HDL Always Construct warning at Stack.sv(21): inferring latch(es) for variable "Full", which holds its previous value in one or more paths through the always construct File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 21
+Warning (10240): Verilog HDL Always Construct warning at Stack.sv(21): inferring latch(es) for variable "DataR", which holds its previous value in one or more paths through the always construct File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 21
+Info (10041): Inferred latch for "Err" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "Empty" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "Full" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "SP[0]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "SP[1]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "SP[2]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "DataR[0]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "DataR[1]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "DataR[2]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "DataR[3]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "DataR[4]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "DataR[5]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "DataR[6]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "DataR[7]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "DataR[8]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "DataR[9]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "DataR[10]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (10041): Inferred latch for "DataR[11]" at Stack.sv(67) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/Stack.sv Line: 67
+Info (12128): Elaborating entity "ProgramCounter" for hierarchy "ProgramCounter:pc" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 233
+Warning (10240): Verilog HDL Always Construct warning at ProgramCounter.sv(11): inferring latch(es) for variable "PC_o", which holds its previous value in one or more paths through the always construct File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv Line: 11
+Info (10041): Inferred latch for "PC_o[0]" at ProgramCounter.sv(11) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv Line: 11
+Info (10041): Inferred latch for "PC_o[1]" at ProgramCounter.sv(11) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv Line: 11
+Info (10041): Inferred latch for "PC_o[2]" at ProgramCounter.sv(11) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv Line: 11
+Info (10041): Inferred latch for "PC_o[3]" at ProgramCounter.sv(11) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv Line: 11
+Info (10041): Inferred latch for "PC_o[4]" at ProgramCounter.sv(11) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv Line: 11
+Info (10041): Inferred latch for "PC_o[5]" at ProgramCounter.sv(11) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv Line: 11
+Info (10041): Inferred latch for "PC_o[6]" at ProgramCounter.sv(11) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv Line: 11
+Info (10041): Inferred latch for "PC_o[7]" at ProgramCounter.sv(11) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv Line: 11
+Info (10041): Inferred latch for "PC_o[8]" at ProgramCounter.sv(11) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv Line: 11
+Info (10041): Inferred latch for "PC_o[9]" at ProgramCounter.sv(11) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv Line: 11
+Info (10041): Inferred latch for "PC_o[10]" at ProgramCounter.sv(11) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv Line: 11
+Info (10041): Inferred latch for "PC_o[11]" at ProgramCounter.sv(11) File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/ProgramCounter.sv Line: 11
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "op2_c[6]" is missing source, defaulting to GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 21
+    Warning (12110): Net "op2_c[5]" is missing source, defaulting to GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 21
+    Warning (12110): Net "op2_c[4]" is missing source, defaulting to GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 21
+    Warning (12110): Net "op2_c[3]" is missing source, defaulting to GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 21
+    Warning (12110): Net "op2_c[2]" is missing source, defaulting to GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 21
+    Warning (12110): Net "op2_c[1]" is missing source, defaulting to GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 21
+Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "data_ack_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 14
+    Warning (13410): Pin "data_dat_o[0]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 15
+    Warning (13410): Pin "data_dat_o[1]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 15
+    Warning (13410): Pin "data_dat_o[2]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 15
+    Warning (13410): Pin "data_dat_o[3]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 15
+    Warning (13410): Pin "data_dat_o[4]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 15
+    Warning (13410): Pin "data_dat_o[5]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 15
+    Warning (13410): Pin "data_dat_o[6]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 15
+    Warning (13410): Pin "data_dat_o[7]" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 15
+    Warning (13410): Pin "inst_ack_o" is stuck at GND File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 18
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/output_files/CPU.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clkEn_i" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
-    Warning (15610): No output dependent on input pin "inst_dat_i[14]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 14
-Info (21057): Implemented 436 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 46 input pins
-    Info (21059): Implemented 44 output pins
-    Info (21061): Implemented 346 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4774 megabytes
-    Info: Processing ended: Wed Mar 10 16:31:15 2021
-    Info: Elapsed time: 00:00:32
-    Info: Total CPU time (on all processors): 00:01:07
+Warning (21074): Design contains 38 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk_en_i" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 5
+    Warning (15610): No output dependent on input pin "inst_dat_i[2]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[3]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[4]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[5]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[6]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[7]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "data_dat_i[0]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 11
+    Warning (15610): No output dependent on input pin "data_dat_i[1]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 11
+    Warning (15610): No output dependent on input pin "data_dat_i[2]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 11
+    Warning (15610): No output dependent on input pin "data_dat_i[3]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 11
+    Warning (15610): No output dependent on input pin "data_dat_i[4]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 11
+    Warning (15610): No output dependent on input pin "data_dat_i[5]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 11
+    Warning (15610): No output dependent on input pin "data_dat_i[6]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 11
+    Warning (15610): No output dependent on input pin "data_dat_i[7]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 11
+    Warning (15610): No output dependent on input pin "port_dat_i[0]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 12
+    Warning (15610): No output dependent on input pin "port_dat_i[1]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 12
+    Warning (15610): No output dependent on input pin "port_dat_i[2]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 12
+    Warning (15610): No output dependent on input pin "port_dat_i[3]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 12
+    Warning (15610): No output dependent on input pin "port_dat_i[4]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 12
+    Warning (15610): No output dependent on input pin "port_dat_i[5]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 12
+    Warning (15610): No output dependent on input pin "port_dat_i[6]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 12
+    Warning (15610): No output dependent on input pin "port_dat_i[7]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 12
+    Warning (15610): No output dependent on input pin "inst_dat_i[11]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "clk_i" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 4
+    Warning (15610): No output dependent on input pin "rst_i" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 6
+    Warning (15610): No output dependent on input pin "inst_ack_i" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 9
+    Warning (15610): No output dependent on input pin "inst_dat_i[12]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[13]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[14]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[15]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[16]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[17]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[1]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[9]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[0]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[10]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+    Warning (15610): No output dependent on input pin "inst_dat_i[8]" File: C:/Users/jorge/OneDrive/Documentos/MyCode2.0/ClassRepos/Quartus/CPU/CPU.sv Line: 8
+Info (21057): Implemented 48 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 38 input pins
+    Info (21059): Implemented 10 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 92 warnings
+    Info: Peak virtual memory: 4740 megabytes
+    Info: Processing ended: Sun Mar 14 22:55:16 2021
+    Info: Elapsed time: 00:00:35
+    Info: Total CPU time (on all processors): 00:01:13
 
 
 +------------------------------------------+

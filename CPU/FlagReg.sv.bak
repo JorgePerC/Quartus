@@ -1,0 +1,42 @@
+module FlagReg (
+    input logic clk,
+    input logic clk_en,
+    input logic rst,
+
+    input logic we, // ALUFR_c
+    input logic iwe,    // Sould this be a selector? rather than a different WE
+
+    input logic intz_i,
+    input logic intc_i,
+    
+    input logic c_i,
+    input logic z_i,
+
+    output logic c_o,
+    output logic z_o
+);
+
+always_ff @( posedge clk, posedge clk_en ) begin 
+    if (rst) begin
+        c_o <= 0;
+        z_o <= 0;
+    end
+    else begin
+        if (iwe) begin
+            c_o <= intc_i;
+            z_o <= intz_i;
+        end
+        else if (we) begin
+            c_o <= c_i;
+            z_o <= z_i;
+        end
+        // If none, set all to 0, avoid problems
+        else begin
+            c_o <= 0;
+            z_o <= 0;
+        end
+    end
+    
+end
+    
+endmodule

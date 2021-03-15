@@ -1,0 +1,89 @@
+module Stack (
+    input logic [3:0] data_i, // Data input
+    
+    input logic rst, 
+    input logic push_i,
+    input logic pop_i,
+
+    output logic [3:0] data_o,
+
+    output logic Full, 
+    output logic Empty, 
+    output logic Err
+);
+
+
+// declare registers
+logic [2:0] SP;           // Stack pointer
+logic [3:0] Stack [7:0]; // Nbit 8 register stack 
+
+/* continuous assignment of DataIO to DataR register, with delay 0 */
+wire [3:0] #(0) DataIO = DataR;
+
+always_comb begin 
+    if (push_i) begin
+        // when the stack is empty
+        if (Empty == 1) begin
+            Stack[SP] = data_i;
+            Empty = 0;
+        end
+        if (Err==1)
+            Err=0;
+        // when the stack is full
+        else if (Full==1) begin 
+            Stack[SP] = data_i;
+            r = 1; Er
+        end
+        else begin
+            SP = SP +1;
+            Stack [SP] = data_i;
+        end
+        if (SP == 3'b111)
+            Full = 1;
+    end
+
+
+    if(pop_i==1) begin
+    /* if SP indicates the last location
+    but the stack is not empty */
+        if ((SP == 3'b000) && (Empty!=1) begin
+            data_o = Stack[SP];
+            Empty = 1;
+        end
+        // if the stack is emtpy
+        else if(Empty==1)  begin
+            data_o = Stack[SP];
+            Err = 1;
+        end
+        else
+            data_o = Stack[SP];
+        if (SP != 3'b000)
+            SP = SP-1;
+        // if the stack is full
+        if (Err==1) 
+            Err = 0;
+        if (Full==1) 
+            Full = 0;
+    end
+
+    if (rst==1) begin
+        data_o = 4'bzzzz;
+        SP = 3'b0;
+        Full = 0;
+        Empty = 0;
+        Err = 0;
+    end
+
+end
+
+
+always @ (negedge pop_i) begin
+    data_o = 4'bzzzz;
+end
+
+endmodule
+
+
+
+
+

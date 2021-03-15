@@ -46,10 +46,18 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE Stack.sv
+set_global_assignment -name SYSTEMVERILOG_FILE PU.sv
+set_global_assignment -name SYSTEMVERILOG_FILE NewProgramCounter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE InstructionRegister.sv
+set_global_assignment -name SYSTEMVERILOG_FILE FlagReg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE CtrlUnitFSM.sv
 set_global_assignment -name SYSTEMVERILOG_FILE CPU.sv
 set_global_assignment -name SYSTEMVERILOG_FILE IR.sv
 set_global_assignment -name SYSTEMVERILOG_FILE MemoryRegister.sv
-set_global_assignment -name SYSTEMVERILOG_FILE SystemVerilog4.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ALU_CPU.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ALU_Shift.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ALU_Arithmetic.sv
@@ -57,7 +65,8 @@ set_global_assignment -name SYSTEMVERILOG_FILE ALU_Logic.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Mux4.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Adder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE BitRegister.sv
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE DataMemory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ProgramCounter.sv
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

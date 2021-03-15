@@ -1,0 +1,33 @@
+module InstructionRegister (
+    input logic clk,
+    input logic clk_en,
+    input logic rst,      // Reestablecer 
+    input logic wrt_en,
+
+    input logic c_i,
+    input logic z_i,
+    input logic [11:0] pc_i,
+
+    output logic intc_o,
+    output logic intz_o,
+
+    output logic [11:0] pc_o
+
+);
+    
+always_ff @( posedge clk, posedge clk_en, posedge rst, posedge wrt_en ) begin
+    if (rst) begin
+        intc_o <= 0;
+        intz_o <= 0;
+        pc_o <= 12'b0;
+    end
+    else if (wrt_en) begin
+        intc_o <= c_i;
+        intz_o <= z_i;
+        pc_o <= pc_i;
+    end
+
+end
+
+
+endmodule

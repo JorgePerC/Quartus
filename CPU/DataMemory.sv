@@ -1,0 +1,46 @@
+module DataMemory (
+	input logic clk_i,
+	input logic cyc_i,
+	input logic stb_i,
+	input logic we_i,
+
+	input logic [7:0] addr_i, // From the 255
+	input logic [7:0] data_i,
+	
+	output logic ack_o,
+	output logic [7:0] data_o
+
+);
+
+// Memory registers
+logic [7:0] DMem [0:255];
+
+logic read_ack;
+
+/*
+With the GASM compiler, we would be able to insert values directly
+initial $readmemh("file.dat", DMem);
+*/
+
+always_ff @(posedge clk_i ) begin
+	if (cyc_i & stb_i) begin
+		if (we_i) begin
+			DMem[addr_i] <= data_i;
+			data_o <= data_i;
+			read_ack <= 1'b0;
+		end
+	
+		else begin
+			data_o <= DMem[addr_i];
+			read_ack <= 1'b1;
+		end
+	end
+	else
+		read_ack <= 1'b0;
+end
+
+always_comb begin
+	ack_o = cyc_i & stb_i & (we_i | read_ack);
+end
+
+endmodule

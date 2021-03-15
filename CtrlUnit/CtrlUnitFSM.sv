@@ -32,7 +32,7 @@ module CtrlUnitFSM (
 
     output logic RegWrt_o,          // :)
     // Program counter
-    output logic [3:0] PCoper_o,    // 4 bit output. Program counter operation *decode* LD :|
+    output logic [1:0] PCoper_o,    // 2 bit output. Program counter operation *decode*, originally it was from 4 bits :|
     output logic PC_en_o,           // :|
     output logic ALUFR_c,           // 1 bit output.  :|
 
@@ -198,13 +198,12 @@ always_comb begin
     op2_o = (alul_immed);
     ALU_en_o = (alu_reg | shift);
     ALUOP_o = (act_state == execute_state) ? alu_reg : 'h0;
-    //RegMux_c_o = ();
+    RegMux_c_o = (mem) ? 2'b01 : (alu_reg) ? 2'b00 : 0;             // *
     ALUFR_c = ( (act_state == write_back_state) | (act_state == execute_state));
     
     // Program counter
-    //PC_en_o = (branch | jump );
-    //DPMux_o =
-
+    PC_en_o = (act_state == fetch_state); // (branch | jump ); //*
+    DPMux_o = (mem | (decode_state == mem_state) | (write_back_state == mem_state) | (act_state == mem_state)); // *
     // Memory
     data_cyc_o = ((act_state == mem_state) & ( stm | ldm));     // 
     data_stb_o = ((act_state == mem_state) & ( stm | ldm));     // ^ Only to read memory
@@ -212,7 +211,7 @@ always_comb begin
     port_we_o = ((act_state == mem_state) & out);       // Save input data
 
     // Interruption
-    reti_o  = (misc & (func_i == 3'b001));
+    reti_o  = ( & (func_i == 3'b001));
     int_o = (misc & (func_i == 3'b010));
 
     // Branch 
@@ -227,13 +226,14 @@ end
 
 always_comb begin 
     if (jump)
-        PCoper_o = 4'b100;
-    else if (branch)
-        PCoper_o = 4'b0100;
-    else if (misc & (func_i == 3'b000))
-        PCoper_o = 4'b1010;
-	 else
-		PCoper_o = 4'b0000;
+        PCoper_o = 2'b01;
+    else if (misc & (func_i == 3'b000)) // Return from subroutine. 
+        PCoper_o = 2'b10;
+    else if (branch) 
+        PCoper_o = 2'b11;
+	else
+        // Rest of instructions are sequential, so no need to make weird things.
+		PCoper_o = 2'b00;
 end
 
 
